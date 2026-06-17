@@ -1,0 +1,32 @@
+name: Deploy
+
+# Build + restart the HAPUS container on the VPS whenever main moves.
+# First-time setup is manual (clone the repo on the VPS, create .env.local);
+# after that every push to main redeploys automatically.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {} # allow manual "Run workflow" from the Actions tab
+
+concurrency:
+  group: deploy-hapus
+  cancel-in-progress: true # a newer push supersedes an in-flight deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy over SSH
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_SSH_PORT || 22 }}
+          script: |
+            set -e
+            cd ${{ secrets.VPS_PROJECT_PATH }}
+            git pull --ff-only origin main
+            docker compose up -d --build
+            docker image prune -f

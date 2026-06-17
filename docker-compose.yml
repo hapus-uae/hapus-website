@@ -1,0 +1,28 @@
+services:
+  hapus:
+    build:
+      context: .
+    container_name: hapus
+    networks:
+      - traefik-network
+    restart: unless-stopped
+    env_file:
+      - .env.local
+    labels:
+      - "traefik.enable=true"
+      # HTTPS
+      - "traefik.http.routers.hapus.rule=Host(`hapus.works.dibolky.in`)"
+      - "traefik.http.routers.hapus.entrypoints=websecure"
+      - "traefik.http.routers.hapus.tls.certresolver=letsencrypt"
+      - "traefik.http.services.hapus.loadbalancer.server.port=3007"
+      # HTTP → HTTPS redirect
+      - "traefik.http.routers.hapus-http.rule=Host(`hapus.works.dibolky.in`)"
+      - "traefik.http.routers.hapus-http.entrypoints=web"
+      - "traefik.http.routers.hapus-http.middlewares=hapus-https-redirect"
+      # Shared redirect middleware
+      - "traefik.http.middlewares.hapus-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.hapus-https-redirect.redirectscheme.permanent=true"
+
+networks:
+  traefik-network:
+    external: true
