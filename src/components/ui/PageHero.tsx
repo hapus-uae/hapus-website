@@ -6,13 +6,11 @@ import { Reveal } from "@/components/ui/Reveal";
 // asymmetric title/lede rhythm used across the site.
 export function PageHero({
   eyebrow,
-  index,
   title,
   lead,
   aside,
 }: {
   eyebrow: string;
-  index?: string;
   title: ReactNode;
   lead?: ReactNode;
   aside?: ReactNode;
@@ -22,14 +20,8 @@ export function PageHero({
       <div className="blueprint absolute inset-0 opacity-40" aria-hidden />
       <Container className="relative">
         <Reveal>
-          <div className="mb-7 flex items-center gap-4">
-            {index ? (
-              <span className="font-mono text-[0.7rem] tracking-[0.2em] text-mute-2">
-                {index}
-              </span>
-            ) : null}
-            <span className="hairline max-w-[3rem] opacity-60" />
-            <span className="label">{eyebrow}</span>
+          <div className="mb-7">
+            <span className="eyebrow">{eyebrow}</span>
           </div>
         </Reveal>
 

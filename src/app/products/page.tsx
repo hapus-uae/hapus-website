@@ -4,7 +4,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { CategoryCard } from "@/components/cards/CategoryCard";
 import { CTABand } from "@/components/ui/CTABand";
-import { categories } from "@/data/categories";
+import { categories, categoryItemCount } from "@/data/categories";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -13,28 +13,23 @@ export const metadata: Metadata = {
 };
 
 export default function ProductsPage() {
-  const totalLines = categories.reduce((n, c) => n + c.products.length, 0);
+  const totalLines = categories.reduce((n, c) => n + categoryItemCount(c), 0);
 
   return (
     <>
       <PageHero
         eyebrow="Solutions"
-        index="P"
         title="A complete ecosystem, one partner."
-        lead={`${categories.length} solution areas across ${totalLines} representative product lines. Choose a category to see the range — every product is shown on its category page.`}
+        lead={`${categories.length} solution areas spanning ${totalLines} equipment classes. Choose a category to see the full range grouped by type.`}
       />
 
       <section className="bg-surface">
         <Container className="py-16 lg:py-24">
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((category, i) => (
-              <Reveal
-                key={category.slug}
-                delay={(i % 3) * 70}
-                className={i === 0 ? "sm:col-span-2" : ""}
-              >
+              <Reveal key={category.slug} delay={(i % 3) * 70}>
                 <div className="h-full">
-                  <CategoryCard category={category} feature={i === 0} />
+                  <CategoryCard category={category} />
                 </div>
               </Reveal>
             ))}

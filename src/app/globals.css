@@ -149,11 +149,22 @@
 }
 
 @layer components {
-  /* Mono technical label — eyebrows, indices, spec keys */
+  /* Mono technical label — indices, spec keys, in-content sub-labels */
   .label {
     font-family: var(--font-mono);
     font-size: 0.6875rem;
     letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-mute);
+  }
+
+  /* Section eyebrow — the title above a section/hero heading. Larger than
+     .label, no index or dash. Used by PageHero, SectionHeading and inline
+     section eyebrows. */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--color-mute);
   }

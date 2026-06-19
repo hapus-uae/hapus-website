@@ -11,14 +11,14 @@ import { jobs } from "@/data/jobs";
 
 const culture = [
   ["Real responsibility early", "You'll work directly with customers and equipment, not from behind a desk."],
-  ["We invest in skill", "Manufacturer and product training on the brands we represent — we grow our own expertise."],
+  ["We invest in skill", "Manufacturer and product training on the brands we represent we grow our own expertise."],
   ["Partnership, inside and out", "We treat our team the way we treat customers: as long-term relationships."],
 ];
 
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Join HAPUS — sales engineers, technical support, product specialists and operations roles across Abu Dhabi and Dubai.",
+    "Join HAPUS sales engineers, technical support, product specialists and operations roles across Abu Dhabi and Dubai.",
 };
 
 export default function CareersPage() {
@@ -26,9 +26,8 @@ export default function CareersPage() {
     <>
       <PageHero
         eyebrow="Careers"
-        index="C"
         title="Build your career with a growing partner."
-        lead="HAPUS grows through the dedication of its team. We hire people who would rather solve the problem than file it — and we invest in them for the long term."
+        lead="HAPUS grows through the dedication of its team. We hire people who would rather solve the problem than file it and we invest in them for the long term."
       />
 
       {/* Culture */}
@@ -63,9 +62,8 @@ export default function CareersPage() {
         <Container className="py-20 lg:py-28">
           <SectionHeading
             eyebrow="Open positions"
-            index="01"
             title={`${jobs.length} roles open right now.`}
-            description="Don't see your role? Send a speculative application — we keep good people in mind."
+            description="Don't see your role? Send a speculative application  we keep good people in mind."
           />
 
           <ul className="mt-14 border-t border-line">
@@ -124,7 +122,7 @@ export default function CareersPage() {
         <Container className="py-20 lg:py-28">
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-4">
-              <SectionHeading eyebrow="Apply" index="02" title="Send it through." />
+              <SectionHeading eyebrow="Apply" title="Send it through." />
               <p className="mt-6 max-w-[40ch] text-sm leading-relaxed text-mute">
                 Fill in your details, attach a CV and pick the role. We read every
                 application and reply to those that fit.

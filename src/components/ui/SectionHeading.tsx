@@ -6,14 +6,12 @@ import { Reveal } from "@/components/ui/Reveal";
 // screens for an asymmetric rhythm.
 export function SectionHeading({
   eyebrow,
-  index,
   title,
   description,
   action,
   className = "",
 }: {
   eyebrow?: string;
-  index?: string;
   title: ReactNode;
   description?: ReactNode;
   action?: ReactNode;
@@ -23,14 +21,8 @@ export function SectionHeading({
     <div className={className}>
       {eyebrow ? (
         <Reveal>
-          <div className="mb-6 flex items-center gap-4">
-            {index ? (
-              <span className="font-mono text-[0.7rem] tracking-[0.2em] text-mute-2">
-                {index}
-              </span>
-            ) : null}
-            <span className="hairline max-w-[3rem] opacity-60" />
-            <span className="label">{eyebrow}</span>
+          <div className="mb-6">
+            <span className="eyebrow">{eyebrow}</span>
           </div>
         </Reveal>
       ) : null}

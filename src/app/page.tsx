@@ -25,7 +25,7 @@ const valueProps = [
   {
     icon: ShieldCheck,
     title: "Strategic global partnerships",
-    body: "We represent internationally recognised manufacturers whose technologies professionals trust worldwide — accessed through one accountable partner.",
+    body: "We represent internationally recognised manufacturers whose technologies professionals trust worldwide accessed through one accountable partner.",
   },
   {
     icon: Wrench,
@@ -80,7 +80,7 @@ export default function Home() {
           <Reveal>
             <div className="mb-8 flex items-center gap-4">
               <span className="size-1.5 bg-accent" aria-hidden />
-              <span className="label">Automotive · Industrial · Workshop solutions</span>
+              <span className="eyebrow">Automotive · Industrial · Workshop solutions</span>
             </div>
           </Reveal>
 
@@ -139,7 +139,7 @@ export default function Home() {
         <Container className="py-20 lg:py-28">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
             <div className="lg:col-span-2">
-              <span className="label">Who we are</span>
+              <span className="eyebrow">Who we are</span>
             </div>
             <div className="lg:col-span-10">
               <Reveal
@@ -185,7 +185,6 @@ export default function Home() {
         <Container className="py-20 lg:py-28">
           <SectionHeading
             eyebrow="Brands"
-            index="01"
             title="The brands professionals trust, through one supplier."
             description="We partner with internationally recognised manufacturers and bring them to you under a single accountable relationship."
             action={
@@ -233,7 +232,6 @@ export default function Home() {
         <Container className="py-20 lg:py-28">
           <SectionHeading
             eyebrow="Why HAPUS"
-            index="02"
             title="Performance begins with the right partner."
             description="Access to products is not the same as a partner who understands your operation and stands behind it."
           />
@@ -272,7 +270,7 @@ export default function Home() {
         <div className="blueprint absolute inset-0 opacity-40" aria-hidden />
         <Container className="relative grid gap-12 py-20 lg:grid-cols-12 lg:py-28">
           <div className="lg:col-span-6">
-            <span className="label">Service &amp; support</span>
+            <span className="eyebrow">Service &amp; support</span>
             <Reveal
               as="h2"
               delay={60}
@@ -282,7 +280,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={120} className="mt-6 max-w-[50ch] text-base leading-relaxed text-mute">
               Technical consultation, installation, genuine parts and after-sales
-              support from a team that knows the equipment — so the value you buy
+              support from a team that knows the equipment so the value you buy
               keeps performing.
             </Reveal>
             <Reveal delay={180}>
@@ -318,7 +316,6 @@ export default function Home() {
         <Container className="py-20 lg:py-28">
           <SectionHeading
             eyebrow="Find us"
-            index="03"
             title="Two offices, nationwide reach."
             description="Head office in Abu Dhabi and a branch in Dubai, serving customers across the United Arab Emirates."
           />

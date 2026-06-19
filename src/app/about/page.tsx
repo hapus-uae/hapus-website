@@ -19,7 +19,7 @@ const milestones = [
 
 const coreValues = [
   ["Purpose beyond products", "Every solution must create measurable value and contribute to our customers' long-term success."],
-  ["Trust as our foundation", "Earned through consistency, transparency and accountability — integrity at the centre of every decision."],
+  ["Trust as our foundation", "Earned through consistency, transparency and accountability integrity at the centre of every decision."],
   ["Technical excellence", "Customers rely on us for expertise as much as products. We invest continuously in knowledge and innovation."],
   ["Partnership over transactions", "We treat customers and suppliers as long-term partners whose success is connected to our own."],
   ["Continuous advancement", "Markets evolve and expectations grow. We embrace change and seek better ways to serve."],
@@ -60,9 +60,8 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About"
-        index="A"
         title="Building better businesses since 2020."
-        lead={`${company.legalName} connects global innovation with local industry — helping UAE organisations operate more efficiently, compete more effectively, and grow with confidence.`}
+        lead={`${company.legalName} connects global innovation with local industry helping UAE organisations operate more efficiently, compete more effectively, and grow with confidence.`}
       />
 
       {/* Story */}
@@ -70,7 +69,7 @@ export default function AboutPage() {
         <Container className="py-20 lg:py-28">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-3">
-              <span className="label">Our story</span>
+              <span className="eyebrow">Our story</span>
             </div>
             <div className="space-y-6 lg:col-span-9">
               <Reveal
@@ -107,7 +106,7 @@ export default function AboutPage() {
         <Container className="relative py-20 lg:py-28">
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-4">
-              <span className="label">From the founder</span>
+              <span className="eyebrow">From the founder</span>
               <Quotes weight="fill" className="mt-8 size-10 text-mute-2" />
               <Reveal
                 as="p"
@@ -146,26 +145,26 @@ export default function AboutPage() {
         <Container className="py-20 lg:py-28">
           <div className="grid grid-cols-1 gap-px border border-line bg-line md:grid-cols-2">
             <Reveal className="bg-surface p-8 lg:p-12">
-              <span className="label">Vision</span>
+              <span className="eyebrow">Vision</span>
               <p className="mt-6 font-display text-2xl font-semibold leading-tight tracking-tight text-balance text-bone lg:text-3xl">
                 To elevate the standards of automotive and industrial operations
                 across the Middle East.
               </p>
               <p className="mt-5 max-w-[52ch] text-sm leading-relaxed text-mute">
                 Making world-class technologies, equipment and expertise accessible
-                to every organisation that strives for excellence — and becoming a
+                to every organisation that strives for excellence and becoming a
                 benchmark for trust, reliability and technical leadership.
               </p>
             </Reveal>
             <Reveal delay={100} className="bg-surface p-8 lg:p-12">
-              <span className="label">Mission</span>
+              <span className="eyebrow">Mission</span>
               <p className="mt-6 font-display text-2xl font-semibold leading-tight tracking-tight text-balance text-bone lg:text-3xl">
                 To bridge global innovation with local industry.
               </p>
               <p className="mt-5 max-w-[52ch] text-sm leading-relaxed text-mute">
                 Delivering trusted brands, advanced technologies and practical
                 expertise that help businesses operate safer, smarter and more
-                efficiently — creating measurable, long-term value.
+                efficiently creating measurable, long-term value.
               </p>
             </Reveal>
           </div>
@@ -177,7 +176,6 @@ export default function AboutPage() {
         <Container className="py-20 lg:py-28">
           <SectionHeading
             eyebrow="Core values"
-            index="01"
             title="What guides every decision."
           />
           <div className="mt-14 grid grid-cols-1 border-t border-line sm:grid-cols-2 lg:grid-cols-3">
@@ -203,7 +201,7 @@ export default function AboutPage() {
       {/* Milestones */}
       <section className="border-b border-line bg-surface">
         <Container className="py-20 lg:py-28">
-          <SectionHeading eyebrow="Milestones" index="02" title="How we got here." />
+          <SectionHeading eyebrow="Milestones" title="How we got here." />
           <ul className="mt-14 border-t border-line">
             {milestones.map((m, i) => (
               <Reveal
@@ -229,9 +227,8 @@ export default function AboutPage() {
         <Container className="py-20 lg:py-28">
           <SectionHeading
             eyebrow="Industries we serve"
-            index="03"
             title="Across automotive and industry."
-            description="From dealerships and bodyshops to manufacturing, logistics and government — wherever performance matters."
+            description="From dealerships and bodyshops to manufacturing, logistics and government wherever performance matters."
           />
           <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {industries.map((ind, i) => (
@@ -258,7 +255,7 @@ export default function AboutPage() {
       {/* Locations */}
       <section className="bg-surface">
         <Container className="py-20 lg:py-28">
-          <SectionHeading eyebrow="Where we are" index="04" title="Abu Dhabi & Dubai." />
+          <SectionHeading eyebrow="Where we are" title="Abu Dhabi & Dubai." />
           <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-2">
             {locations.map((loc, i) => (
               <Reveal key={loc.name} delay={i * 80}>

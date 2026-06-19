@@ -13,28 +13,11 @@ export type Brand = {
   logo?: string;
 };
 
-export type ProductSpec = {
-  label: string;
-  value: string;
-};
-
-export type Product = {
-  id: string;
+export type ProductGroup = {
+  /** Sub-category heading within a category, e.g. "Surface Preparation". */
   name: string;
-  /** Internal catalogue reference, shown mono. Not a URL. */
-  code: string;
-  /** One-line descriptor under the name. */
-  summary: string;
-  /** Brand slug — must match a Brand in data/brands.ts. */
-  brand: string;
-  /** Specs revealed in the inline modal (no dedicated page). */
-  specs: ProductSpec[];
-  /** Longer description shown inside the inline modal. */
-  detail?: string;
-  /** Path under /public/assets/products/. Optional — placeholder otherwise. */
-  image?: string;
-  /** Flags a hero/flagship item for subtle emphasis in the grid. */
-  featured?: boolean;
+  /** Equipment classes under this group — names only. No SKUs, no per-item pages. */
+  items: string[];
 };
 
 export type Category = {
@@ -46,8 +29,10 @@ export type Category = {
   description: string;
   /** Two-digit catalogue index, e.g. "04". */
   index: string;
-  /** Products that live on this category page (and only here). */
-  products: Product[];
+  /** Sub-groups of equipment classes shown on the category page. */
+  groups: ProductGroup[];
+  /** Brand slugs represented here — must match a Brand in data/brands.ts. */
+  brands?: string[];
   /** Path under /public/assets/categories/. Optional — placeholder otherwise. */
   image?: string;
 };
@@ -62,11 +47,11 @@ export type ServiceOffering = {
 export type TrainingProgram = {
   code: string;
   title: string;
-  audience: string;
-  format: string;
-  duration: string;
-  outcomes: string[];
-  certification: string;
+  /** Topics covered in the program — the PDF "Coverage" list. */
+  coverage: string[];
+  /** Who the program is for — the PDF "Target Audience" list. Omitted where the
+   * source document lists none (e.g. cleaning equipment, EV safety awareness). */
+  audience?: string[];
 };
 
 export type Job = {

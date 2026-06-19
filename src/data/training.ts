@@ -1,72 +1,110 @@
 import type { TrainingProgram } from "@/lib/types";
 
-// Product training & onboarding. HAPUS supports customers through go-live on new
-// equipment with operator training on the lines it represents — delivered on the
-// customer's site or at a HAPUS facility.
+// Training & Technical Development — authored from the client's programme
+// document. HAPUS delivers practical, hands-on training to help workshop
+// personnel, technicians, supervisors and maintenance teams improve
+// operational efficiency, workplace safety, equipment reliability and
+// technical competency — on the customer's site or at a HAPUS facility.
 export const trainingPrograms: TrainingProgram[] = [
   {
     code: "TR-01",
-    title: "Refinishing application",
-    audience: "Painters, prep technicians",
-    format: "On-site or HAPUS facility",
-    duration: "Scheduled to need",
-    outcomes: [
-      "Set up and use HVLP spray equipment for a consistent finish",
-      "Surface preparation and defect prevention",
-      "Polishing and detailing to a manufacturer-level standard",
+    title: "Vehicle Lift Safety & Operation",
+    coverage: [
+      "Two post lift safety",
+      "Four post lift safety",
+      "Scissor lift safety",
+      "Vehicle positioning",
+      "Safe lifting procedures",
+      "Daily operator inspection",
+      "Common fault recognition",
+      "Preventive maintenance awareness",
+      "Workshop safety compliance",
     ],
-    certification: "Manufacturer-aligned operator guidance",
+    audience: ["Workshop technicians", "Service advisors", "Workshop supervisors"],
   },
   {
     code: "TR-02",
-    title: "Wheel service & alignment",
-    audience: "Workshop technicians",
-    format: "On-site at the customer bay",
-    duration: "Scheduled to need",
-    outcomes: [
-      "Operate alignment, balancing and tyre-service equipment correctly",
-      "Read and act on alignment and vibration data",
-      "Daily checks that keep equipment accurate",
+    title: "Air Compressor Operation & Maintenance",
+    coverage: [
+      "Compressor fundamentals",
+      "Daily inspection procedures",
+      "Air dryer maintenance",
+      "Filter maintenance",
+      "Compressor safety",
+      "Air leakage management",
+      "Energy efficiency best practices",
+      "Early fault detection",
+      "Preventive maintenance awareness",
     ],
-    certification: "Hunter operator onboarding",
+    audience: ["Maintenance teams", "Facility technicians", "Workshop managers"],
   },
   {
     code: "TR-03",
-    title: "Compressed air operation & care",
-    audience: "Maintenance & facility teams",
-    format: "On-site",
-    duration: "Scheduled to need",
-    outcomes: [
-      "Operate compressors and air treatment safely",
-      "Routine maintenance that protects uptime",
-      "Recognise and escalate faults early",
+    title: "Wheel Alignment & Tyre Equipment",
+    coverage: [
+      "Wheel alignment principles",
+      "Equipment calibration awareness",
+      "Wheel clamp handling",
+      "Alignment accuracy",
+      "Tyre changer operation",
+      "Daily equipment checks",
+      "Common operating errors",
     ],
-    certification: "Competency record",
+    audience: ["Alignment technicians", "Tyre service personnel", "Workshop supervisors"],
   },
   {
     code: "TR-04",
-    title: "Power tools & safety",
-    audience: "Workshop & production staff",
-    format: "On-site, short session",
-    duration: "Half-day",
-    outcomes: [
-      "Correct, safe use of professional power tools",
-      "Battery-platform handling and care",
-      "Maintenance to extend tool life",
+    title: "Workshop Equipment Preventive Maintenance",
+    coverage: [
+      "Equipment inspection techniques",
+      "Lubrication best practices",
+      "Safety device verification",
+      "Electrical visual inspection",
+      "Mechanical wear identification",
+      "Maintenance documentation",
+      "Equipment life extension strategies",
     ],
-    certification: "Competency record",
+    audience: ["Workshop managers", "Maintenance teams", "Service technicians"],
   },
   {
     code: "TR-05",
-    title: "Cleaning equipment operation",
-    audience: "Facility & detailing teams",
-    format: "On-site",
-    duration: "Short session",
-    outcomes: [
-      "Operate pressure washers, scrubbers and vacuums effectively",
-      "Safe handling and consumable management",
-      "Routine care that keeps equipment reliable",
+    title: "Industrial Cleaning Equipment",
+    coverage: [
+      "Industrial vacuum operation",
+      "High pressure cleaning equipment",
+      "Safe handling procedures",
+      "Preventive maintenance",
+      "Troubleshooting basics",
     ],
-    certification: "Operator onboarding",
   },
+  {
+    code: "TR-06",
+    title: "EV Workshop Safety Awareness",
+    coverage: [
+      "EV workshop safety",
+      "High voltage awareness",
+      "Insulated tools",
+      "EV battery handling equipment",
+      "Safe working practices",
+      "Workshop risk assessment",
+    ],
+  },
+];
+
+// Premium Services — Technical Consultancy. Advisory engagements that sit
+// alongside the training catalogue.
+export const consultancyServices: string[] = [
+  "Equipment condition assessment",
+  "Workshop productivity evaluation",
+  "Maintenance planning",
+  "Preventive maintenance program development",
+  "Equipment lifecycle evaluation",
+  "Workshop expansion consultation",
+];
+
+// Certificate of Participation — issued for selected programs on completion.
+export const trainingCertificates: string[] = [
+  "Training Attendance Certificate",
+  "Equipment Awareness Certificate",
+  "Workshop Safety Awareness Certificate",
 ];

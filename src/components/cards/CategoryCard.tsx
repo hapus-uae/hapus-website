@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { PlaceholderMedia } from "@/components/ui/PlaceholderMedia";
+import { categoryItemCount } from "@/data/categories";
 import type { Category } from "@/lib/types";
 
 // Category card → links to the category catalogue page. `feature` enlarges the
@@ -49,7 +50,7 @@ export function CategoryCard({
         </p>
         <div className="mt-5 flex items-center gap-3 border-t border-line-soft pt-4">
           <span className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-mute-2">
-            {category.products.length} lines
+            {category.groups.length} groups · {categoryItemCount(category)} lines
           </span>
           <span className="ml-auto font-mono text-[0.65rem] uppercase tracking-[0.16em] text-mute transition-colors group-hover:text-bone">
             View range

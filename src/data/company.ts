@@ -16,7 +16,7 @@ export const company = {
   description:
     "HAPUS connects global innovation with local industry supplying world-class automotive refinishing, workshop, compressed-air, power-tool, material-handling, industrial and cleaning solutions to businesses across the UAE, backed by technical expertise and trusted manufacturer partnerships.",
   shortDescription:
-    "Automotive & industrial solutions across the UAE — trusted brands, technical expertise, and long-term partnership since 2020.",
+    "Automotive & industrial solutions across the UAE trusted brands, technical expertise, and long-term partnership since 2020.",
   philosophy: "Connecting global innovation with local industry.",
   email: "sales@hapusuae.com",
   infoEmail: "info@hapusuae.com",
@@ -44,7 +44,7 @@ export const company = {
     name: "Mansoor Mohammed",
     role: "Founder & Managing Director",
     quote:
-      "Our objective was never simply to build another trading company. It was to deliver genuine value — connecting businesses with world-class technologies, trusted brands, and the expertise to use them well.",
+      "Our objective was never simply to build another trading company. It was to deliver genuine value connecting businesses with world-class technologies, trusted brands, and the expertise to use them well.",
     message: [
       "When HAPUS was established in 2020, the objective was never simply to build another trading company. The vision was to create an organization capable of delivering genuine value to businesses by connecting them with world-class technologies, trusted global brands, and practical expertise that improve operational performance.",
       "Having spent years working closely with the automotive and industrial sectors across the UAE, I recognized a growing need for a partner that could offer more than products alone. Businesses required dependable advice, technical understanding, responsive support, and solutions tailored to their operational requirements. This belief became the foundation upon which HAPUS was built.",

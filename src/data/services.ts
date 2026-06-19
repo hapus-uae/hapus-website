@@ -6,7 +6,7 @@ export const serviceOfferings: ServiceOffering[] = [
   {
     title: "Technical consultation & specification",
     description:
-      "We start by understanding your operation, then specify the right equipment and layout for it — solutions that fit the job rather than a catalogue line.",
+      "We start by understanding your operation, then specify the right equipment and layout for it solutions that fit the job rather than a catalogue line.",
     icon: "Headset",
   },
   {
@@ -24,7 +24,7 @@ export const serviceOfferings: ServiceOffering[] = [
   {
     title: "Genuine spare parts & consumables",
     description:
-      "Parts and consumables for the brands we represent — kept moving so equipment stays productive and downtime stays short.",
+      "Parts and consumables for the brands we represent kept moving so equipment stays productive and downtime stays short.",
     icon: "Gear",
   },
   {
@@ -36,7 +36,7 @@ export const serviceOfferings: ServiceOffering[] = [
   {
     title: "Operator support",
     description:
-      "Product expertise and operator guidance from people who know the equipment — support that extends well beyond the point of sale.",
+      "Product expertise and operator guidance from people who know the equipment support that extends well beyond the point of sale.",
     icon: "Truck",
   },
 ];

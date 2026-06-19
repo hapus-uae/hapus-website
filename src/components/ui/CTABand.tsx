@@ -26,9 +26,7 @@ export function CTABand({
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
             <Reveal>
-              <span className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-pink">
-                {eyebrow}
-              </span>
+              <span className="eyebrow text-pink">{eyebrow}</span>
             </Reveal>
             <Reveal
               as="h2"

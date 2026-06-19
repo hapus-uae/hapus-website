@@ -33,9 +33,8 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        index="✉"
         title="Let's build better business together."
-        lead="Whether it's automotive solutions, industrial equipment, compressed air, professional tools or a strategic partnership — our team is ready to help. Every project begins with a conversation."
+        lead="Whether it's automotive solutions, industrial equipment, compressed air, professional tools or a strategic partnership our team is ready to help. Every project begins with a conversation."
       />
 
       {/* Form + channels */}
@@ -44,7 +43,7 @@ export default function ContactPage() {
           <div className="grid gap-12 lg:grid-cols-12">
             {/* Channels */}
             <div className="lg:col-span-4">
-              <span className="label">Direct lines</span>
+              <span className="eyebrow">Direct lines</span>
               <ul className="mt-6 divide-y divide-line border-y border-line">
                 {channels.map((c) => (
                   <li key={c.label}>
@@ -76,7 +75,7 @@ export default function ContactPage() {
               </ul>
 
               <div className="mt-8">
-                <span className="label">Follow</span>
+                <span className="eyebrow">Follow</span>
                 <div className="mt-4 flex gap-4">
                   {company.social.map((s) => (
                     <a
@@ -108,7 +107,7 @@ export default function ContactPage() {
       {/* Branches */}
       <section className="bg-surface">
         <Container className="py-20 lg:py-28">
-          <SectionHeading eyebrow="Branches" index="01" title="Come and see the equipment." />
+          <SectionHeading eyebrow="Branches" title="Come and see the equipment." />
           <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-2">
             {locations.map((loc, i) => (
               <Reveal key={loc.name} delay={i * 80}>

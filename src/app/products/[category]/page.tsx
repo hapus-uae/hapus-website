@@ -4,7 +4,6 @@ import Link from "next/link";
 import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-import { ProductGrid } from "@/components/products/ProductGrid";
 import { CTABand } from "@/components/ui/CTABand";
 import { categories, categoryBySlug } from "@/data/categories";
 import { brandBySlug } from "@/data/brands";
@@ -35,8 +34,7 @@ export default async function CategoryPage({
   if (!category) notFound();
 
   // Brands represented within this category, for the hero tags.
-  const brandSlugs = Array.from(new Set(category.products.map((p) => p.brand)));
-  const brandTags = brandSlugs
+  const brandTags = (category.brands ?? [])
     .map((s) => brandBySlug(s))
     .filter((b): b is NonNullable<typeof b> => Boolean(b));
 
@@ -98,14 +96,36 @@ export default async function CategoryPage({
         </Container>
       </section>
 
-      {/* Product catalogue grid (inline specs, no per-product pages) */}
+      {/* Grouped equipment classes — names only, no per-item pages */}
       <section className="bg-surface">
         <Container className="py-14 lg:py-20">
-          <ProductGrid
-            products={category.products}
-            categorySlug={category.slug}
-            categoryName={category.name}
-          />
+          <div className="space-y-14 lg:space-y-20">
+            {category.groups.map((group, gi) => (
+              <Reveal key={group.name} delay={(gi % 2) * 70}>
+                <div className="grid gap-8 lg:grid-cols-12">
+                  <div className="lg:col-span-4">
+                    <span className="font-mono text-[0.65rem] tracking-[0.2em] text-mute-2">
+                      {category.index}.{String(gi + 1).padStart(2, "0")}
+                    </span>
+                    <h2 className="mt-3 font-display text-2xl font-semibold tracking-tight text-bone lg:text-3xl">
+                      {group.name}
+                    </h2>
+                  </div>
+
+                  <ul className="grid gap-px self-start border border-line bg-line sm:grid-cols-2 lg:col-span-8 lg:grid-cols-3">
+                    {group.items.map((item) => (
+                      <li
+                        key={item}
+                        className="bg-surface px-5 py-4 text-sm leading-snug text-bone"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </Container>
       </section>
 

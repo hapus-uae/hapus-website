@@ -17,7 +17,6 @@ export default function BrandsPage() {
     <>
       <PageHero
         eyebrow="Brands"
-        index="B"
         title="The brands the world's professionals trust."
         lead={`We partner with ${brands.length} internationally recognised manufacturers, giving customers direct access to proven technologies through one accountable relationship.`}
       />
@@ -38,7 +37,7 @@ export default function BrandsPage() {
             <p className="mt-16 max-w-[68ch] text-base leading-relaxed text-mute">
               Our partnerships are built on a shared commitment to quality,
               innovation and customer success. Looking for a brand not listed
-              here? We add lines as our customers need them — ask, and we&apos;ll
+              here? We add lines as our customers need them ask, and we&apos;ll
               tell you whether we can source it.
             </p>
           </Reveal>

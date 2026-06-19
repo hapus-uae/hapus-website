@@ -9,7 +9,7 @@ export const jobs: Job[] = [
     type: "Full-time",
     department: "Sales",
     summary:
-      "Own a territory across the automotive and industrial sectors — specify solutions for workshops, dealerships, fleets and industrial customers.",
+      "Own a territory across the automotive and industrial sectors specify solutions for workshops, dealerships, fleets and industrial customers.",
     responsibilities: [
       "Survey customer operations and recommend the right equipment and brands",
       "Prepare quotations and manage orders through to handover",

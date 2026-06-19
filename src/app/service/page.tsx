@@ -37,9 +37,8 @@ export default function ServicePage() {
     <>
       <PageHero
         eyebrow="Service & support"
-        index="S"
         title="Supplied by us, supported by us."
-        lead="Our value is not in the box — it's in the expertise around it. We help you specify, install and support the right solution for your operation."
+        lead="Our value is not in the box it's in the expertise around it. We help you specify, install and support the right solution for your operation."
         aside={
           <dl className="grid grid-cols-1 gap-px border border-line bg-line sm:grid-cols-3">
             {serviceCommitments.map((c) => (
@@ -59,7 +58,7 @@ export default function ServicePage() {
       <section className="bg-surface">
         <Container className="py-20 lg:py-28">
           <Reveal>
-            <span className="label">What we do</span>
+            <span className="eyebrow">What we do</span>
           </Reveal>
           <div className="mt-10 grid grid-cols-1 border-t border-line md:grid-cols-2">
             {serviceOfferings.map((offering, i) => {
@@ -98,7 +97,7 @@ export default function ServicePage() {
         <div className="blueprint absolute inset-0 opacity-40" aria-hidden />
         <Container className="relative grid gap-12 py-20 lg:grid-cols-12 lg:py-28">
           <div className="lg:col-span-5">
-            <span className="label">Coverage</span>
+            <span className="eyebrow">Coverage</span>
             <Reveal
               as="h2"
               delay={60}
@@ -108,7 +107,7 @@ export default function ServicePage() {
             </Reveal>
             <Reveal delay={120} className="mt-6 max-w-[48ch] text-base leading-relaxed text-mute">
               We work out of Abu Dhabi and Dubai and support customers right across
-              the Emirates — with the parts and technical backup to keep your
+              the Emirates with the parts and technical backup to keep your
               equipment productive.
             </Reveal>
           </div>
@@ -144,7 +143,6 @@ export default function ServicePage() {
         <Container className="py-20 lg:py-28">
           <SectionHeading
             eyebrow="Success stories"
-            index="01"
             title="Practical solutions, measurable outcomes."
             description="A few examples of how the right equipment and support changed how our customers operate."
           />

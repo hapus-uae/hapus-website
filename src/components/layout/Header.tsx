@@ -68,7 +68,7 @@ export function Header() {
                 <Link
                   href={item.href}
                   aria-expanded={megaOpen}
-                  className={`px-4 py-2 font-mono text-[0.7rem] uppercase tracking-[0.16em] transition-colors ${
+                  className={`px-4 py-2 font-mono text-[0.7rem] font-semibold uppercase tracking-[0.16em] transition-colors ${
                     isActive(item.href) ? "text-accent" : "text-ink/55 hover:text-ink"
                   }`}
                 >
@@ -79,7 +79,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`px-4 py-2 font-mono text-[0.7rem] uppercase tracking-[0.16em] transition-colors ${
+                className={`px-4 py-2 font-mono text-[0.7rem] font-semibold uppercase tracking-[0.16em] transition-colors ${
                   isActive(item.href) ? "text-ink" : "text-ink/55 hover:text-ink"
                 }`}
               >
