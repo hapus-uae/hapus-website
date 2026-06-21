@@ -16,11 +16,15 @@ export function FloatingContact() {
       label: "Call us",
       href: `tel:${company.phoneHref}`,
       icon: Phone,
+      bg: "bg-[#2D6CDF]",
+      hover: "hover:bg-[#2257bd]",
     },
     {
       label: "WhatsApp",
       href: `https://wa.me/${company.whatsappHref}`,
       icon: WhatsappLogo,
+      bg: "bg-[#25D366]",
+      hover: "hover:bg-[#1faa52]",
     },
   ];
 
@@ -43,12 +47,12 @@ export function FloatingContact() {
                   damping: 26,
                   delay: i * 0.04,
                 }}
-                className="flex items-center gap-3 rounded-full border border-line bg-panel/95 py-2.5 pl-4 pr-3 shadow-lg backdrop-blur-md"
+                className={`flex items-center gap-3 rounded-full py-2.5 pl-4 pr-3 text-white shadow-lg transition-colors ${action.bg} ${action.hover}`}
               >
-                <span className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-bone">
+                <span className="font-mono text-[0.65rem] uppercase tracking-[0.16em]">
                   {action.label}
                 </span>
-                <action.icon weight="fill" className="size-4 text-bone" />
+                <action.icon weight="fill" className="size-4" />
               </motion.a>
             ))
           : null}
