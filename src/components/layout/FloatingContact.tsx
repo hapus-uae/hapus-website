@@ -2,17 +2,18 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Phone, WhatsappLogo, Plus } from "@phosphor-icons/react";
+import { Phone, WhatsappLogo, X } from "@phosphor-icons/react";
 import { company } from "@/data/company";
 
-// Mobile-only floating speed-dial: call + WhatsApp. Springs open from a single
-// FAB. Hidden on lg+ where the header CTA and footer cover contact.
+// Persistent floating contact widget, bottom-right on every screen. A green
+// WhatsApp-style FAB that springs open into a small speed-dial (Call +
+// WhatsApp). Green is the universal "message us" cue, so it reads instantly.
 export function FloatingContact() {
   const [open, setOpen] = useState(false);
 
   const actions = [
     {
-      label: "Call",
+      label: "Call us",
       href: `tel:${company.phoneHref}`,
       icon: Phone,
     },
@@ -24,7 +25,7 @@ export function FloatingContact() {
   ];
 
   return (
-    <div className="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-3 lg:hidden">
+    <div className="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-3">
       <AnimatePresence>
         {open
           ? actions.map((action, i) => (
@@ -42,7 +43,7 @@ export function FloatingContact() {
                   damping: 26,
                   delay: i * 0.04,
                 }}
-                className="flex items-center gap-3 border border-line bg-panel/95 py-2.5 pl-4 pr-3 backdrop-blur-md"
+                className="flex items-center gap-3 rounded-full border border-line bg-panel/95 py-2.5 pl-4 pr-3 shadow-lg backdrop-blur-md"
               >
                 <span className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-bone">
                   {action.label}
@@ -56,13 +57,33 @@ export function FloatingContact() {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        aria-label={open ? "Close contact options" : "Open contact options"}
+        aria-label={open ? "Close contact options" : "Contact us"}
         aria-expanded={open}
-        className="flex size-14 items-center justify-center border border-accent bg-accent text-white shadow-lg shadow-accent/20 transition-transform active:scale-95"
+        className="flex size-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl shadow-[#25D366]/30 transition-[transform,background-color] hover:bg-[#1faa52] active:scale-95"
       >
-        <motion.span animate={{ rotate: open ? 45 : 0 }} transition={{ duration: 0.25 }}>
-          <Plus weight="bold" className="size-6" />
-        </motion.span>
+        <AnimatePresence mode="wait" initial={false}>
+          {open ? (
+            <motion.span
+              key="close"
+              initial={{ rotate: -90, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              exit={{ rotate: 90, opacity: 0 }}
+              transition={{ duration: 0.18 }}
+            >
+              <X weight="bold" className="size-6" />
+            </motion.span>
+          ) : (
+            <motion.span
+              key="whatsapp"
+              initial={{ rotate: 90, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              exit={{ rotate: -90, opacity: 0 }}
+              transition={{ duration: 0.18 }}
+            >
+              <WhatsappLogo weight="fill" className="size-7" />
+            </motion.span>
+          )}
+        </AnimatePresence>
       </button>
     </div>
   );
