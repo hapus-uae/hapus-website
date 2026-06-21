@@ -1,7 +1,12 @@
 import type { Job } from "@/lib/types";
 
-// Open positions. Apply routes to the Careers form (or careers email).
-export const jobs: Job[] = [
+// Active open positions. Empty = not currently hiring; the Careers page shows a
+// "no current openings" state and still accepts speculative applications.
+// Move roles from `archivedJobs` below into this array when hiring resumes.
+export const jobs: Job[] = [];
+
+// Previously listed roles — kept for when hiring resumes.
+export const archivedJobs: Job[] = [
   {
     id: "sales-engineer-auh",
     title: "Sales Engineer",

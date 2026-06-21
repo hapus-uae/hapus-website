@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingContact } from "@/components/layout/FloatingContact";
+import { SitePopups } from "@/components/marketing/SitePopups";
 import { company, locations } from "@/data/company";
 
 // Display face — Archivo: an industrial grotesque with character (no Inter).
@@ -114,6 +115,7 @@ export default function RootLayout({
         <main id="main">{children}</main>
         <Footer />
         <FloatingContact />
+        <SitePopups />
       </body>
     </html>
   );

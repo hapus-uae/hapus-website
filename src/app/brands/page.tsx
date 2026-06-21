@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { BrandTile } from "@/components/cards/BrandTile";
-import { CTABand } from "@/components/ui/CTABand";
+import { IndustriesWeServe } from "@/components/sections/IndustriesWeServe";
 import { brands } from "@/data/brands";
 
 export const metadata: Metadata = {
@@ -44,11 +44,7 @@ export default function BrandsPage() {
         </Container>
       </section>
 
-      <CTABand
-        eyebrow="Brand enquiry"
-        title="Want to know who carries what?"
-        body="Tell us the brand or the equipment you have in mind and we'll point you to the right solution and price."
-      />
+      <IndustriesWeServe />
     </>
   );
 }

@@ -35,6 +35,8 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Let's build better business together."
         lead="Whether it's automotive solutions, industrial equipment, compressed air, professional tools or a strategic partnership our team is ready to help. Every project begins with a conversation."
+        image="/assets/hero/contact.jpg"
+        imageClassName="object-top"
       />
 
       {/* Form + channels */}

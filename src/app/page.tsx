@@ -1,18 +1,17 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ShieldCheck,
   Wrench,
   Package,
   GraduationCap,
-  ArrowRight,
 } from "@phosphor-icons/react/dist/ssr";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Marquee } from "@/components/ui/Marquee";
-import { HeroVideo } from "@/components/ui/HeroVideo";
-import { CTABand } from "@/components/ui/CTABand";
+import { IndustriesWeServe } from "@/components/sections/IndustriesWeServe";
 import { LocationCard } from "@/components/cards/LocationCard";
 import { BrandLogo } from "@/components/cards/BrandLogo";
 import type { Brand } from "@/lib/types";
@@ -26,111 +25,125 @@ const valueProps = [
     icon: ShieldCheck,
     title: "Strategic global partnerships",
     body: "We represent internationally recognised manufacturers whose technologies professionals trust worldwide accessed through one accountable partner.",
+    image: "/assets/why/partnerships.jpg",
   },
   {
     icon: Wrench,
     title: "Industry-focused expertise",
     body: "We understand the operational realities of automotive and industrial businesses, so we recommend solutions that deliver practical results, not just specifications.",
+    image: "/assets/why/expertise.jpg",
   },
   {
     icon: Package,
     title: "A complete solution portfolio",
     body: "Refinishing, workshop, compressed air, power tools, material handling, industrial and cleaning solutions — a full ecosystem under one supplier.",
+    image: "/assets/why/portfolio.jpg",
   },
   {
     icon: GraduationCap,
     title: "Support beyond the sale",
     body: "Technical consultation, installation, genuine parts and operator support that protect the value of your equipment over its working life.",
+    image: "/assets/why/support.jpg",
   },
 ];
 
-const supportPoints: [string, string][] = [
-  ["Technical consultation", "The right solution for your operation"],
-  ["Installation & commissioning", "Set up to manufacturer standard"],
-  ["Spare parts & consumables", "For the brands we represent"],
-  ["After-sales support", "Well beyond the point of sale"],
+// Trust-bar customers — black monochrome logos in /public/assets/customers.
+const trustedBy: { name: string; logo: string; w: number; h: number }[] = [
+  { name: "Al-Futtaim", logo: "/assets/customers/al-futtaim.png", w: 288, h: 280 },
+  { name: "Al Tayer", logo: "/assets/customers/al-tayer.png", w: 358, h: 106 },
+  { name: "Elite Motor Cars", logo: "/assets/customers/elite-cars.png", w: 422, h: 174 },
+  { name: "Al Nabooda Automobiles", logo: "/assets/customers/al-nabooda.png", w: 600, h: 432 },
+  { name: "Fleet Management", logo: "/assets/customers/fleet.png", w: 159, h: 130 },
+  { name: "Industrial Facilities", logo: "/assets/customers/industrial-facilities.png", w: 600, h: 258 },
 ];
 
 export default function Home() {
   return (
     <>
       {/* ---------- Hero ---------- */}
-      <section className="on-wine relative flex min-h-[100dvh] flex-col justify-end overflow-hidden border-b border-line bg-ink pb-12 pt-28 lg:pb-16">
-        {/* Background video (drop files in /public/assets/hero/). Desaturated
-            and dimmed to stay on-palette and keep the headline readable. */}
-        <HeroVideo
-          src="/assets/hero/hero.mp4"
-          poster="/assets/hero/hero-poster.jpg"
-          className="pointer-events-none absolute inset-0 size-full object-cover opacity-70 filter-[grayscale(1)_contrast(1.05)_brightness(0.42)]"
+      <section className="on-wine relative flex min-h-[100dvh] items-center overflow-hidden border-b border-line bg-ink">
+        {/* Background image (drop a file at /public/assets/hero/hero.jpg) */}
+        <Image
+          src="/assets/hero/hero.jpg"
+          alt="A vehicle raised on a HAPUS workshop lift"
+          fill
+          priority
+          sizes="100vw"
+          className="pointer-events-none object-cover"
         />
-        <div className="blueprint absolute inset-0 opacity-40" aria-hidden />
-        {/* Legibility scrim — darkens left/bottom where the text sits. */}
-        {/* Wine veil tints the grayscale video toward the brand colour */}
-        <div className="absolute inset-0 bg-ink/35" aria-hidden />
+        {/* Left gradient for headline legibility — neutral dark, no colour cast.
+            Plus a short bottom blend into the next section. */}
         <div
-          className="absolute inset-0 bg-[radial-gradient(120%_90%_at_15%_0%,transparent,rgba(50,20,28,0.9))]"
+          className="absolute inset-0 bg-[linear-gradient(to_right,rgba(10,9,11,0.9)_0%,rgba(10,9,11,0.55)_38%,transparent_68%)]"
           aria-hidden
         />
         <div
-          className="absolute inset-0 bg-[linear-gradient(to_top,var(--color-ink)_4%,transparent_55%)]"
+          className="absolute inset-0 bg-[linear-gradient(to_top,var(--color-ink)_1%,transparent_34%)]"
           aria-hidden
         />
 
-        <Container className="relative flex flex-1 flex-col justify-center pt-12">
-          <Reveal>
-            <div className="mb-8 flex items-center gap-4">
-              <span className="size-1.5 bg-accent" aria-hidden />
-              <span className="eyebrow">Automotive · Industrial · Workshop solutions</span>
-            </div>
-          </Reveal>
+        <Container className="relative w-full pt-28 pb-12 lg:pt-32">
+          <div className="max-w-3xl">
+              <Reveal
+                as="h1"
+                className="font-display text-[2.9rem] font-bold leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl"
+              >
+                <span className="block text-bone">Engineering Productivity.</span>
+                <span className="block text-accent">Delivering <br/>Reliability.</span>
+              </Reveal>
 
-          <Reveal
-            as="h1"
-            delay={80}
-            className="max-w-[18ch] font-display text-[2.7rem] font-semibold leading-[0.94] tracking-tight text-balance sm:text-6xl lg:text-[5rem]"
-          >
-            More than a supplier. A strategic solutions partner.
-          </Reveal>
+              <Reveal
+                delay={120}
+                as="p"
+                className="mt-6 font-display text-lg font-semibold tracking-tight text-bone sm:text-xl"
+              >
+                Industrial Equipment · Workshop Solutions<br/> Technical Training ·
+                After-Sales Support
+              </Reveal>
 
-          <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:items-end">
-            <Reveal
-              delay={180}
-              className="max-w-[56ch] text-pretty text-base leading-relaxed text-mute lg:col-span-6"
-            >
-              HAPUS connects global innovation with local industry supplying and
-              supporting automotive refinishing, workshop, compressed-air,
-              power-tool, material-handling and industrial solutions for businesses
-              across {company.region}.
-            </Reveal>
+              <Reveal
+                delay={180}
+                className="mt-5 max-w-[50ch] text-pretty text-base leading-relaxed text-mute"
+              >
+                HAPUS partners with automotive, industrial, fleet and manufacturing
+                businesses across {company.region} delivering equipment, technical
+                expertise, training and long-term operational support.
+              </Reveal>
 
-            <Reveal delay={260} className="flex flex-wrap gap-3 lg:col-span-6 lg:justify-end">
-              <ButtonLink href="/products" variant="primary" size="lg" withArrow>
-                Explore solutions
-              </ButtonLink>
-              <ButtonLink href="/contact" variant="outline" size="lg">
-                Contact us
-              </ButtonLink>
-            </Reveal>
+              <Reveal delay={260} className="mt-9 flex flex-wrap gap-3">
+                <ButtonLink href="/products" variant="primary" size="lg" withArrow>
+                  Explore solutions
+                </ButtonLink>
+                <ButtonLink href="/contact" variant="outline" size="lg">
+                  Request consultation
+                </ButtonLink>
+              </Reveal>
           </div>
         </Container>
+      </section>
 
-        {/* Stat readout strip */}
-        <Container className="relative mt-14">
-          <Reveal delay={320}>
-            <dl className="grid grid-cols-2 gap-px border border-line bg-line lg:grid-cols-4">
-              {company.stats.map((stat) => (
-                <div key={stat.label} className="bg-ink p-5 lg:p-6">
-                  <dt className="font-display text-3xl font-semibold tracking-tight text-bone lg:text-4xl">
-                    {stat.value}
-                    <span className="text-mute-2">{stat.unit}</span>
-                  </dt>
-                  <dd className="mt-1.5 text-xs leading-snug text-mute">
-                    {stat.label}
-                  </dd>
-                </div>
+      {/* ---------- Trusted by ---------- */}
+      <section className="border-b border-line bg-surface">
+        <Container className="py-7 lg:py-9">
+          <div className="flex flex-col items-center gap-y-10 lg:flex-row lg:gap-x-12">
+            <span className="eyebrow shrink-0 text-center lg:max-w-40 lg:text-left">
+              Trusted by industry leaders
+            </span>
+            <span className="hidden h-10 w-px shrink-0 bg-line lg:block" aria-hidden />
+            <Marquee className="min-w-0 flex-1">
+              {trustedBy.map((c) => (
+                <span key={c.name} className="flex items-center px-8 lg:px-10">
+                  <Image
+                    src={c.logo}
+                    alt={c.name}
+                    width={c.w}
+                    height={c.h}
+                    className="h-8 w-auto max-w-35 object-contain opacity-100 transition-opacity duration-300 hover:opacity-50 sm:h-9"
+                  />
+                </span>
               ))}
-            </dl>
-          </Reveal>
+            </Marquee>
+          </div>
         </Container>
       </section>
 
@@ -146,10 +159,8 @@ export default function Home() {
                 as="p"
                 className="font-display text-2xl font-medium leading-snug tracking-tight text-balance text-bone sm:text-3xl lg:text-[2.4rem]"
               >
-                Since 2020, HAPUS has helped businesses across the UAE operate at a
-                higher standard connecting workshops, dealerships, fleets and
-                industrial operators with world-class equipment, trusted brands,
-                and the expertise to use them well.
+                HAPUS General Trading L.L.C – S.P.C was established with a clear purpose: to help businesses across the UAE operate at higher standards by providing access to world-class technologies, equipment, and technical solutions.
+
               </Reveal>
               <Reveal delay={120}>
                 <ButtonLink href="/about" variant="ghost" size="md" withArrow className="mt-8">
@@ -161,20 +172,23 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* ---------- Industries we serve ---------- */}
+      <IndustriesWeServe />
+
       {/* ---------- Category marquee divider ---------- */}
-      <div className="on-wine border-b border-line bg-ink py-5">
+      <div className="on-wine border-b border-line bg-[#171A1C] bg-none py-5">
         <Marquee>
           {categories.map((c) => (
             <Link
               key={c.slug}
               href={`/products/${c.slug}`}
-              className="group flex items-center gap-5 px-6 text-mute transition-colors hover:text-bone"
+              className="group flex items-center gap-5 px-6 text-white transition-colors hover:text-white"
             >
-              <span className="font-mono text-[0.6rem] text-mute-2">{c.index}</span>
+              <span className="font-mono text-[0.6rem] text-white/45">{c.index}</span>
               <span className="font-display text-lg font-medium tracking-tight">
                 {c.name}
               </span>
-              <span className="text-mute-2">/</span>
+              <span className="text-white/35">/</span>
             </Link>
           ))}
         </Marquee>
@@ -201,30 +215,12 @@ export default function Home() {
               <BrandPill key={b.slug} brand={b} />
             ))}
           </Marquee>
-          <Marquee className="[&_.marquee-track]:[animation-duration:46s] [&_.marquee-track]:[animation-direction:reverse]">
+          <Marquee reverse>
             {brands.slice(7).map((b) => (
               <BrandPill key={b.slug} brand={b} />
             ))}
           </Marquee>
         </div>
-      </section>
-
-      {/* ---------- Trusted by ---------- */}
-      <section className="border-b border-line bg-surface">
-        <Container className="py-14 lg:py-16">
-          <p className="label mb-8 text-center">Trusted by leading UAE organisations</p>
-          <Marquee>
-            {company.customers.map((c) => (
-              <span
-                key={c}
-                className="whitespace-nowrap px-8 text-base font-medium text-mute-2 transition-colors hover:text-bone"
-              >
-                {c}
-                <span className="ml-8 text-mute-2/40">—</span>
-              </span>
-            ))}
-          </Marquee>
-        </Container>
       </section>
 
       {/* ---------- Why us ---------- */}
@@ -236,77 +232,39 @@ export default function Home() {
             description="Access to products is not the same as a partner who understands your operation and stands behind it."
           />
 
-          <div className="mt-14 grid grid-cols-1 border-t border-line md:grid-cols-2">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:mt-14 lg:gap-6">
             {valueProps.map((prop, i) => (
               <Reveal
                 key={prop.title}
-                delay={(i % 2) * 90}
-                className={`border-b border-line p-7 lg:p-9 ${
-                  i % 2 === 0 ? "md:border-r" : ""
-                }`}
+                delay={(i % 2) * 80}
+                from={i % 2 === 0 ? "left" : "right"}
+                className="group flex flex-col overflow-hidden border border-line"
               >
-                <div className="flex items-start gap-5">
+                <div className="relative aspect-video overflow-hidden">
+                  <Image
+                    src={prop.image}
+                    alt={prop.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 ease-out-expo group-hover:scale-[1.03]"
+                  />
+                </div>
+                <div className="on-wine flex flex-1 items-start gap-4 bg-[linear-gradient(140deg,#171A1C_0%,#4d1729_34%,#571930_58%,#7e2541_82%,#a33146_100%)] p-5 lg:p-6">
                   <prop.icon
                     weight="light"
-                    className="mt-1 size-7 shrink-0 text-bone"
+                    className="mt-0.5 size-6 shrink-0 text-bone"
                   />
                   <div>
-                    <h3 className="font-display text-xl font-semibold tracking-tight text-bone">
+                    <h3 className="font-display text-lg font-semibold tracking-tight text-bone">
                       {prop.title}
                     </h3>
-                    <p className="mt-3 max-w-[46ch] text-sm leading-relaxed text-mute">
+                    <p className="mt-2 text-sm leading-relaxed text-mute">
                       {prop.body}
                     </p>
                   </div>
                 </div>
               </Reveal>
             ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* ---------- Service highlight ---------- */}
-      <section className="on-wine relative overflow-hidden border-b border-line bg-ink">
-        <div className="blueprint absolute inset-0 opacity-40" aria-hidden />
-        <Container className="relative grid gap-12 py-20 lg:grid-cols-12 lg:py-28">
-          <div className="lg:col-span-6">
-            <span className="eyebrow">Service &amp; support</span>
-            <Reveal
-              as="h2"
-              delay={60}
-              className="mt-6 max-w-[16ch] font-display text-4xl font-semibold leading-none tracking-tight text-balance sm:text-5xl"
-            >
-              The sale is the start, not the finish.
-            </Reveal>
-            <Reveal delay={120} className="mt-6 max-w-[50ch] text-base leading-relaxed text-mute">
-              Technical consultation, installation, genuine parts and after-sales
-              support from a team that knows the equipment so the value you buy
-              keeps performing.
-            </Reveal>
-            <Reveal delay={180}>
-              <ButtonLink href="/service" variant="outline" size="lg" withArrow className="mt-9">
-                How we support you
-              </ButtonLink>
-            </Reveal>
-          </div>
-
-          <div className="lg:col-span-5 lg:col-start-8">
-            <ul className="divide-y divide-line border-y border-line">
-              {supportPoints.map(([title, sub], i) => (
-                <Reveal
-                  key={title}
-                  delay={i * 70}
-                  as="li"
-                  className="flex items-center justify-between gap-6 py-5"
-                >
-                  <div>
-                    <p className="text-base font-medium text-bone">{title}</p>
-                    <p className="mt-1 text-sm text-mute-2">{sub}</p>
-                  </div>
-                  <ArrowRight className="size-4 text-mute-2" />
-                </Reveal>
-              ))}
-            </ul>
           </div>
         </Container>
       </section>
@@ -330,12 +288,6 @@ export default function Home() {
           </div>
         </Container>
       </section>
-
-      {/* ---------- Closing CTA ---------- */}
-      <CTABand
-        title="Let's build better business together."
-        body="Whether it's automotive solutions, industrial equipment, compressed air, professional tools or a strategic partnership — tell us what you need and our team will help."
-      />
     </>
   );
 }

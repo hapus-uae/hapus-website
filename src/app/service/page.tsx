@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   Wrench,
   Gauge,
@@ -11,7 +12,6 @@ import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { CTABand } from "@/components/ui/CTABand";
 import { serviceOfferings, serviceCommitments, successStories } from "@/data/services";
 import { locations } from "@/data/company";
 
@@ -25,6 +25,23 @@ const iconMap: Record<string, IconType> = {
   Truck,
   Headset,
 };
+
+// Reuse the matching category images for each success story (by order).
+const storyImages = [
+  "/assets/categories/workshop-infrastructure.jpg",
+  "/assets/categories/compressed-air.jpg",
+  "/assets/categories/automotive-refinishing.jpg",
+];
+
+// A fitting (reused) image for each "What we do" offering, by order.
+const offeringImages = [
+  "/assets/why/partnerships.jpg", // technical consultation
+  "/assets/categories/workshop-infrastructure.jpg", // installation & commissioning
+  "/assets/categories/professional-tools.jpg", // calibration & certification
+  "/assets/why/portfolio.jpg", // genuine spare parts & consumables
+  "/assets/why/expertise.jpg", // maintenance & after-sales
+  "/assets/industries/training.jpg", // operator support
+];
 
 export const metadata: Metadata = {
   title: "Service & Support",
@@ -60,28 +77,43 @@ export default function ServicePage() {
           <Reveal>
             <span className="eyebrow">What we do</span>
           </Reveal>
-          <div className="mt-10 grid grid-cols-1 border-t border-line md:grid-cols-2">
+          <div className="mt-12 border-t border-line">
             {serviceOfferings.map((offering, i) => {
               const Ico = iconMap[offering.icon] ?? Gear;
+              const flip = i % 2 === 1;
               return (
                 <Reveal
                   key={offering.title}
-                  delay={(i % 2) * 80}
-                  className={`flex gap-6 border-b border-line p-7 lg:p-9 ${
-                    i % 2 === 0 ? "md:border-r" : ""
-                  }`}
+                  className="grid items-center gap-8 border-b border-line py-10 lg:grid-cols-12 lg:gap-12 lg:py-12"
                 >
-                  <div className="flex flex-col items-center gap-3">
-                    <span className="font-mono text-[0.6rem] text-mute-2">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <Ico weight="light" className="size-7 text-bone" />
+                  <div
+                    className={`relative aspect-video overflow-hidden border border-line lg:col-span-5 ${
+                      flip ? "lg:order-2 lg:col-start-8" : ""
+                    }`}
+                  >
+                    <Image
+                      src={offeringImages[i] ?? ""}
+                      alt={offering.title}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 42vw"
+                      className="object-cover"
+                    />
                   </div>
-                  <div>
-                    <h3 className="font-display text-xl font-semibold tracking-tight text-bone">
+                  <div
+                    className={`lg:col-span-6 ${
+                      flip ? "lg:order-1 lg:col-start-1" : "lg:col-start-7"
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="font-mono text-sm text-mute-2">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <Ico weight="light" className="size-6 text-bone" />
+                    </div>
+                    <h3 className="mt-3 font-display text-2xl font-semibold tracking-tight text-bone lg:text-3xl">
                       {offering.title}
                     </h3>
-                    <p className="mt-3 max-w-[46ch] text-sm leading-relaxed text-mute">
+                    <p className="mt-3 max-w-[54ch] text-base leading-relaxed text-mute">
                       {offering.description}
                     </p>
                   </div>
@@ -89,6 +121,7 @@ export default function ServicePage() {
               );
             })}
           </div>
+
         </Container>
       </section>
 
@@ -149,7 +182,17 @@ export default function ServicePage() {
           <div className="mt-14 grid grid-cols-1 gap-5 lg:grid-cols-3">
             {successStories.map((story, i) => (
               <Reveal key={story.title} delay={(i % 3) * 80}>
-                <article className="flex h-full flex-col border border-line bg-panel/30 p-7">
+                <article className="group flex h-full flex-col overflow-hidden border border-line bg-panel/30">
+                  <div className="relative aspect-video overflow-hidden">
+                    <Image
+                      src={storyImages[i] ?? ""}
+                      alt={story.title}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-700 ease-out-expo group-hover:scale-[1.04]"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-7">
                   <span className="font-mono text-[0.6rem] text-mute-2">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -172,6 +215,7 @@ export default function ServicePage() {
                       </div>
                     ))}
                   </dl>
+                  </div>
                 </article>
               </Reveal>
             ))}
@@ -179,13 +223,6 @@ export default function ServicePage() {
         </Container>
       </section>
 
-      <CTABand
-        eyebrow="Get in touch"
-        title="Need support or a spare part?"
-        body="Tell us the equipment, the brand and the issue. Our team will help you get back to full performance."
-        href="/contact?category=service"
-        cta="Request support"
-      />
     </>
   );
 }

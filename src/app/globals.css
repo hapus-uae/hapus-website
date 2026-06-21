@@ -98,6 +98,16 @@
     scroll-behavior: smooth;
   }
 
+  /* Contain horizontal overflow. The reveal animations translate elements
+     ±44px on the X axis, which can push content past the viewport edge on
+     small screens and create a stray horizontal scroll (clipping content on
+     the left). Clipping at the root keeps the page locked to its width while
+     still allowing vertical scroll. */
+  html,
+  body {
+    overflow-x: clip;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
@@ -216,6 +226,28 @@
   }
 }
 
+@keyframes hapus-reveal-left {
+  from {
+    opacity: 0;
+    transform: translate3d(-44px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hapus-reveal-right {
+  from {
+    opacity: 0;
+    transform: translate3d(44px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 @keyframes hapus-marquee {
   from {
     transform: translate3d(0, 0, 0);
@@ -243,6 +275,12 @@
 }
 .marquee-track:hover {
   animation-play-state: paused;
+}
+/* Opposite-direction row. Re-declares the full animation shorthand (not just
+   animation-direction) so there's no sub-property cascade ambiguity. Un-layered
+   like .marquee-track so it beats Tailwind's layered utilities. */
+.marquee-track.is-reverse {
+  animation: hapus-marquee 38s linear infinite reverse;
 }
 
 /* Skeleton shimmer for loading media */

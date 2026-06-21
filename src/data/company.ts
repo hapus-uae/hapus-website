@@ -44,11 +44,14 @@ export const company = {
     name: "Mansoor Mohammed",
     role: "Founder & Managing Director",
     quote:
-      "Our objective was never simply to build another trading company. It was to deliver genuine value connecting businesses with world-class technologies, trusted brands, and the expertise to use them well.",
+      "When HAPUS was established in 2020, the objective was never simply to build another trading company.",
     message: [
-      "When HAPUS was established in 2020, the objective was never simply to build another trading company. The vision was to create an organization capable of delivering genuine value to businesses by connecting them with world-class technologies, trusted global brands, and practical expertise that improve operational performance.",
+      "The vision was to create an organization capable of delivering genuine value to businesses by connecting them with world-class technologies, trusted global brands, and practical expertise that improve operational performance.",
       "Having spent years working closely with the automotive and industrial sectors across the UAE, I recognized a growing need for a partner that could offer more than products alone. Businesses required dependable advice, technical understanding, responsive support, and solutions tailored to their operational requirements. This belief became the foundation upon which HAPUS was built.",
-      "Over the years, we have been privileged to earn the trust of workshops, service centers, industrial operators, and some of the UAE's most respected automotive organizations. As we continue to grow, our commitment remains unchanged: trust, integrity, technical excellence, and long-term relationships.",
+      "Over the years, we have been privileged to earn the trust of workshops, service centers, industrial operators, and some of the UAE's most respected automotive organizations. Every milestone we have achieved has been made possible through the confidence our customers place in us, the dedication of our team, and the strength of our relationships with leading international manufacturers.",
+      "As we continue to grow, our commitment remains unchanged. We will continue investing in knowledge, innovation, strategic partnerships, and customer success while remaining focused on the values that define our organization: trust, integrity, technical excellence, and long-term relationships.",
+      "The future of industry belongs to organizations that embrace innovation, adapt to change, and continuously pursue higher standards. HAPUS is proud to be part of that journey, helping businesses across the region operate more efficiently, compete more effectively, and grow with confidence.",
+      "Thank you for your trust and partnership.",
     ],
   },
   // Representative customers named in the company narrative.

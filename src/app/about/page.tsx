@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Car, Factory, Buildings, Truck, Quotes } from "@phosphor-icons/react/dist/ssr";
+import { Quotes } from "@phosphor-icons/react/dist/ssr";
+import { IndustriesWeServe } from "@/components/sections/IndustriesWeServe";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { LocationCard } from "@/components/cards/LocationCard";
-import { CTABand } from "@/components/ui/CTABand";
 import { company, locations } from "@/data/company";
 
 const milestones = [
@@ -18,35 +18,12 @@ const milestones = [
 ];
 
 const coreValues = [
-  ["Purpose beyond products", "Every solution must create measurable value and contribute to our customers' long-term success."],
-  ["Trust as our foundation", "Earned through consistency, transparency and accountability integrity at the centre of every decision."],
-  ["Technical excellence", "Customers rely on us for expertise as much as products. We invest continuously in knowledge and innovation."],
-  ["Partnership over transactions", "We treat customers and suppliers as long-term partners whose success is connected to our own."],
-  ["Continuous advancement", "Markets evolve and expectations grow. We embrace change and seek better ways to serve."],
-  ["Commitment to performance", "Reliability, efficiency and operational excellence guide every aspect of our business."],
-];
-
-const industries = [
-  {
-    icon: Car,
-    title: "Automotive",
-    items: ["Dealerships", "Body & paint centres", "Luxury vehicle service", "Independent workshops", "Fleet operations"],
-  },
-  {
-    icon: Factory,
-    title: "Industrial",
-    items: ["Manufacturing facilities", "Engineering contractors", "Maintenance providers", "Production facilities"],
-  },
-  {
-    icon: Buildings,
-    title: "Commercial & infrastructure",
-    items: ["Facility management", "Logistics operators", "Transport organisations", "Government entities"],
-  },
-  {
-    icon: Truck,
-    title: "Heavy equipment & technical",
-    items: ["Construction equipment centres", "Industrial machinery operators", "Equipment maintenance providers"],
-  },
+  ["Purpose beyond products", "We believe our responsibility extends beyond supplying equipment. Every solution we deliver must create measurable value, improve operational performance, and contribute to our customers' long-term success."],
+  ["Trust as our foundation", "Trust is earned through consistency, transparency, and accountability. We build relationships that endure because we place integrity at the center of every business decision."],
+  ["Technical excellence", "Our customers rely on us for expertise as much as they rely on us for products. We continuously invest in knowledge, innovation, and professional development to deliver informed recommendations and practical solutions."],
+  ["Partnership over transactions", "We do not view our customers, suppliers, or stakeholders as counterparties. We view them as long-term partners whose success is closely connected to our own."],
+  ["Continuous advancement", "Markets evolve, technologies improve, and customer expectations grow. We embrace change and continuously seek better ways to serve the industries that depend on us."],
+  ["Commitment to performance", "Reliability, efficiency, and operational excellence are principles that guide every aspect of our business. We hold ourselves to the same standards we encourage our customers to achieve."],
 ];
 
 export const metadata: Metadata = {
@@ -59,9 +36,10 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About"
-        title="Building better businesses since 2020."
-        lead={`${company.legalName} connects global innovation with local industry helping UAE organisations operate more efficiently, compete more effectively, and grow with confidence.`}
+        eyebrow="About HAPUS"
+        title="Building better businesses through world-class automotive & industrial solutions."
+        lead={`${company.legalName} was established with a clear purpose: to help businesses across the UAE operate at higher standards by providing access to world-class technologies, equipment, and technical solutions.`}
+        image="/assets/hero/hero.jpg"
       />
 
       {/* Story */}
@@ -76,24 +54,50 @@ export default function AboutPage() {
                 as="p"
                 className="font-display text-2xl font-medium leading-snug tracking-tight text-balance text-bone sm:text-3xl"
               >
-                HAPUS was founded on a simple belief: businesses perform better
-                when they have the right technology, the right expertise, and the
-                right partners.
+                Every company has a beginning. Few have a purpose that continues
+                to guide their growth.
               </Reveal>
               <Reveal as="p" delay={80} className="max-w-[68ch] text-base leading-relaxed text-mute">
-                Established in 2020 in Abu Dhabi, HAPUS entered the market with a
-                focused commitment to the UAE&apos;s automotive sector. Through
-                consistency, technical knowledge and customer-centric service, we
-                quickly earned the trust of workshops, service centres and
-                automotive professionals across the country.
+                HAPUS General Trading L.L.C – S.P.C was founded on the belief that
+                businesses perform better when they have access to the right
+                technology, the right expertise, and the right partners. From day
+                one, our objective was not simply to supply products, but to
+                create value by helping automotive and industrial businesses
+                operate more efficiently, more competitively, and with greater
+                confidence.
               </Reveal>
               <Reveal as="p" delay={140} className="max-w-[68ch] text-base leading-relaxed text-mute">
-                As demands evolved, so did our capabilities — expanding into
-                professional tools, infrastructure, compressors, lifting systems
-                and industrial equipment. While our portfolio continues to grow,
-                our purpose remains unchanged: connecting global innovation with
-                local industry and helping businesses reach higher standards of
-                performance.
+                Established in 2020 in Abu Dhabi, HAPUS entered the market with a
+                focused commitment to serving the UAE&apos;s automotive sector.
+                Through consistency, technical knowledge, and customer-centric
+                service, the company rapidly gained the trust of workshops,
+                service centers, and automotive professionals throughout the
+                country.
+              </Reveal>
+              <Reveal as="p" delay={200} className="max-w-[68ch] text-base leading-relaxed text-mute">
+                By 2022, HAPUS had established a strong presence across the UAE
+                automotive workshop industry. As market demands evolved, so did
+                our capabilities. We expanded beyond traditional product supply
+                into professional workshop tools, infrastructure solutions,
+                industrial equipment, compressors, lifting systems, and advanced
+                operational technologies.
+              </Reveal>
+              <Reveal as="p" delay={260} className="max-w-[68ch] text-base leading-relaxed text-mute">
+                Today, HAPUS continues to grow through strategic partnerships with
+                globally respected manufacturers, a commitment to technical
+                excellence, and a relentless focus on customer success.
+              </Reveal>
+              <Reveal as="p" delay={320} className="max-w-[68ch] text-base leading-relaxed text-mute">
+                While our portfolio continues to evolve, our purpose remains
+                unchanged: connecting global innovation with local industry and
+                helping businesses achieve higher standards of performance,
+                productivity, and operational excellence.
+              </Reveal>
+              <Reveal as="p" delay={380} className="max-w-[68ch] text-base leading-relaxed text-mute">
+                Looking ahead, HAPUS remains focused on expanding its
+                capabilities, strengthening strategic partnerships, and becoming a
+                leading regional provider of automotive and industrial solutions
+                throughout the Middle East.
               </Reveal>
             </div>
           </div>
@@ -150,22 +154,59 @@ export default function AboutPage() {
                 To elevate the standards of automotive and industrial operations
                 across the Middle East.
               </p>
-              <p className="mt-5 max-w-[52ch] text-sm leading-relaxed text-mute">
-                Making world-class technologies, equipment and expertise accessible
-                to every organisation that strives for excellence and becoming a
-                benchmark for trust, reliability and technical leadership.
-              </p>
+              <div className="mt-5 max-w-[52ch] space-y-4 text-sm leading-relaxed text-mute">
+                <p>
+                  By making world-class technologies, equipment, and expertise
+                  accessible to every organization that strives for excellence.
+                </p>
+                <p>
+                  We envision a future where businesses throughout the region can
+                  operate with the same efficiency, precision, and technological
+                  advantage as the world&apos;s leading organizations. Through
+                  innovation, strategic partnerships, and a relentless commitment
+                  to quality, HAPUS aims to become a benchmark for trust,
+                  reliability, and technical leadership within the industries we
+                  serve.
+                </p>
+                <p>
+                  Our vision extends beyond commercial growth. We aspire to
+                  contribute to the advancement of regional industry by helping
+                  businesses improve performance, increase productivity, and
+                  embrace the technologies that will define the future of
+                  automotive and industrial operations.
+                </p>
+              </div>
             </Reveal>
             <Reveal delay={100} className="bg-surface p-8 lg:p-12">
               <span className="eyebrow">Mission</span>
               <p className="mt-6 font-display text-2xl font-semibold leading-tight tracking-tight text-balance text-bone lg:text-3xl">
                 To bridge global innovation with local industry.
               </p>
-              <p className="mt-5 max-w-[52ch] text-sm leading-relaxed text-mute">
-                Delivering trusted brands, advanced technologies and practical
-                expertise that help businesses operate safer, smarter and more
-                efficiently creating measurable, long-term value.
-              </p>
+              <div className="mt-5 max-w-[52ch] space-y-4 text-sm leading-relaxed text-mute">
+                <p>
+                  By delivering trusted brands, advanced technologies, and
+                  practical expertise that help businesses operate safer, smarter,
+                  and more efficiently.
+                </p>
+                <p>
+                  We are committed to creating measurable value for our customers
+                  through carefully selected products, professional technical
+                  support, and solution-driven partnerships that address real
+                  operational challenges.
+                </p>
+                <p>
+                  By combining international quality standards with deep market
+                  understanding, we help our customers improve productivity, reduce
+                  downtime, optimize performance, and achieve sustainable growth.
+                </p>
+                <p>
+                  Every relationship we build, every solution we recommend, and
+                  every product we supply is guided by our commitment to
+                  professionalism, reliability, and long-term partnership. Our
+                  mission is not simply to be a supplier, but to become a trusted
+                  strategic partner in the success of every organization we serve.
+                </p>
+              </div>
             </Reveal>
           </div>
         </Container>
@@ -223,34 +264,7 @@ export default function AboutPage() {
       </section>
 
       {/* Industries we serve */}
-      <section className="on-wine border-b border-line bg-ink">
-        <Container className="py-20 lg:py-28">
-          <SectionHeading
-            eyebrow="Industries we serve"
-            title="Across automotive and industry."
-            description="From dealerships and bodyshops to manufacturing, logistics and government wherever performance matters."
-          />
-          <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {industries.map((ind, i) => (
-              <Reveal key={ind.title} delay={(i % 4) * 60}>
-                <div className="on-paper flex h-full flex-col border border-line bg-surface p-6">
-                  <ind.icon weight="light" className="size-8 text-bone" />
-                  <h3 className="mt-5 font-display text-lg font-semibold tracking-tight text-bone">
-                    {ind.title}
-                  </h3>
-                  <ul className="mt-4 space-y-1.5">
-                    {ind.items.map((item) => (
-                      <li key={item} className="text-sm leading-relaxed text-mute">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <IndustriesWeServe />
 
       {/* Locations */}
       <section className="bg-surface">
@@ -268,7 +282,6 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <CTABand />
     </>
   );
 }

@@ -28,6 +28,7 @@ export default function CareersPage() {
         eyebrow="Careers"
         title="Build your career with a growing partner."
         lead="HAPUS grows through the dedication of its team. We hire people who would rather solve the problem than file it and we invest in them for the long term."
+        image="/assets/why/partnerships.jpg"
       />
 
       {/* Culture */}
@@ -62,10 +63,32 @@ export default function CareersPage() {
         <Container className="py-20 lg:py-28">
           <SectionHeading
             eyebrow="Open positions"
-            title={`${jobs.length} roles open right now.`}
-            description="Don't see your role? Send a speculative application  we keep good people in mind."
+            title={
+              jobs.length === 0
+                ? "No open positions right now."
+                : `${jobs.length} roles open right now.`
+            }
+            description="We're not actively hiring at the moment — but we keep good people in mind. Send a speculative application below and we'll be in touch when the right role opens."
           />
 
+          {jobs.length === 0 ? (
+            <Reveal className="mt-12 border border-line bg-ink/40 p-8 lg:p-10">
+              <p className="max-w-[52ch] text-base leading-relaxed text-mute">
+                There are no vacancies advertised currently. HAPUS grows
+                steadily, so roles in sales, technical support, product and
+                operations open from time to time across Abu Dhabi and Dubai. If
+                that sounds like you, introduce yourself —
+                <Link
+                  href="#apply"
+                  className="text-bone underline-offset-4 transition-colors hover:underline"
+                >
+                  {" "}
+                  send your CV
+                </Link>
+                .
+              </p>
+            </Reveal>
+          ) : (
           <ul className="mt-14 border-t border-line">
             {jobs.map((job, i) => (
               <Reveal
@@ -114,6 +137,7 @@ export default function CareersPage() {
               </Reveal>
             ))}
           </ul>
+          )}
         </Container>
       </section>
 

@@ -20,7 +20,7 @@ export function BrandLogo({ brand }: { brand: Brand }) {
 
   if (idx >= candidates.length) {
     return (
-      <span className="inline-block font-display text-2xl font-semibold tracking-tight text-bone transition-transform duration-300 ease-out-expo group-hover:scale-110">
+      <span className="inline-block font-display text-2xl font-semibold tracking-tight text-neutral-900 transition-transform duration-300 ease-out-expo group-hover:scale-110">
         {brand.name}
       </span>
     );
