@@ -17,8 +17,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   const channels = [
-    { icon: Phone, label: "Mobile", value: company.phoneDisplay, href: `tel:${company.phoneHref}` },
-    { icon: Phone, label: "Landline", value: company.landlineDisplay, href: `tel:${company.landlineHref}` },
+    { icon: Phone, label: "Phone", value: company.phoneDisplay, href: `tel:${company.phoneHref}` },
     {
       icon: WhatsappLogo,
       label: "WhatsApp",

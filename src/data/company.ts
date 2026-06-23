@@ -24,8 +24,6 @@ export const company = {
   serviceEmail: "sales@hapusuae.com",
   phoneDisplay: "+971 50 585 8231",
   phoneHref: "+971505858231",
-  landlineDisplay: "+971 50 585 8231",
-  landlineHref: "+971505858231",
   whatsappDisplay: "+971 50 585 8231",
   whatsappHref: "971505858231",
   hours: "Mon–Sat, 08:00–18:00",

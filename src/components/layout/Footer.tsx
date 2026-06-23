@@ -1,6 +1,5 @@
 import Link from "next/link";
 import {
-  MapPin,
   Phone,
   EnvelopeSimple,
   WhatsappLogo,
@@ -12,16 +11,10 @@ import { mainNav } from "@/data/nav";
 
 const contacts = [
   {
-    icon: MapPin,
-    label: "Abu Dhabi office",
+    icon: Phone,
+    label: "Phone",
     value: company.phoneDisplay,
     href: `tel:${company.phoneHref}`,
-  },
-  {
-    icon: Phone,
-    label: "Dubai office",
-    value: company.landlineDisplay,
-    href: `tel:${company.landlineHref}`,
   },
   {
     icon: EnvelopeSimple,

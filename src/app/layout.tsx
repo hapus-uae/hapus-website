@@ -75,7 +75,7 @@ const jsonLd = {
   description: company.description,
   url: company.url,
   email: company.email,
-  telephone: [company.phoneDisplay, company.landlineDisplay],
+  telephone: company.phoneDisplay,
   foundingDate: String(company.foundedYear),
   founder: { "@type": "Person", name: company.founder.name },
   areaServed: "United Arab Emirates",
