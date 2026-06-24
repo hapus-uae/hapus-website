@@ -89,3 +89,4 @@ action. To deliver server-side, POST the form payload to a route handler (e.g.
 Static output deploys anywhere; Vercel is the natural target. Update `company.url`
 in `src/data/company.ts` to the production domain so canonical URLs, OpenGraph and
 the sitemap are correct.
+
