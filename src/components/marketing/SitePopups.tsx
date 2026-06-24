@@ -27,7 +27,7 @@ const POPUPS: Record<
     eyebrow: "HAPUS",
     title: "Specifying equipment for your operation?",
     body: "Tell us what you're working on and we'll recommend the right setup — supplied and supported by one accountable partner.",
-    ctaLabel: "Request a quote",
+    ctaLabel: "Request consultation",
     ctaHref: "/contact",
   },
   exit: {
@@ -35,7 +35,7 @@ const POPUPS: Record<
     eyebrow: "Before you go",
     title: "Let's get you a price.",
     body: "Send us your requirement and our team will come back within one business day with a quote.",
-    ctaLabel: "Get in touch",
+    ctaLabel: "Speak with our team",
     ctaHref: "/contact",
   },
 };

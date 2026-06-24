@@ -49,6 +49,8 @@ export type TrainingProgram = {
   title: string;
   /** Topics covered in the program — the PDF "Coverage" list. */
   coverage: string[];
+  /** What participants can do after the program — practical learning outcomes. */
+  outcomes?: string[];
   /** Who the program is for — the PDF "Target Audience" list. Omitted where the
    * source document lists none (e.g. cleaning equipment, EV safety awareness). */
   audience?: string[];

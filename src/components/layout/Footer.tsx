@@ -43,7 +43,7 @@ export function Footer() {
               The sale is only the beginning.
             </h2>
             <p className="mt-6 max-w-[44ch] text-base leading-relaxed text-mute">
-              Equipment can be purchased anywhere the real value comes from the
+              Equipment can be purchased anywhere. The real value comes from the
               support that follows. From installation and commissioning to
               operator training and technical assistance, HAPUS remains your
               partner long after delivery.

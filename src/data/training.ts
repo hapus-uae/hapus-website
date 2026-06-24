@@ -21,6 +21,12 @@ export const trainingPrograms: TrainingProgram[] = [
       "Workshop safety compliance",
     ],
     audience: ["Workshop technicians", "Service advisors", "Workshop supervisors"],
+    outcomes: [
+      "Operate two-post, four-post and scissor lifts safely and correctly",
+      "Position vehicles and follow safe lifting procedures",
+      "Carry out daily operator inspections and recognise common faults",
+      "Apply workshop safety compliance in everyday operation",
+    ],
   },
   {
     code: "TR-02",
@@ -37,6 +43,12 @@ export const trainingPrograms: TrainingProgram[] = [
       "Preventive maintenance awareness",
     ],
     audience: ["Maintenance teams", "Facility technicians", "Workshop managers"],
+    outcomes: [
+      "Understand compressor fundamentals and daily inspection routines",
+      "Maintain air dryers and filters to keep air quality reliable",
+      "Identify air leakage and apply energy-efficiency best practices",
+      "Detect early faults and follow preventive maintenance",
+    ],
   },
   {
     code: "TR-03",
@@ -51,6 +63,12 @@ export const trainingPrograms: TrainingProgram[] = [
       "Common operating errors",
     ],
     audience: ["Alignment technicians", "Tyre service personnel", "Workshop supervisors"],
+    outcomes: [
+      "Apply wheel alignment principles and maintain alignment accuracy",
+      "Operate tyre changers and handle wheel clamps safely",
+      "Perform daily equipment checks with calibration awareness",
+      "Recognise and avoid common operating errors",
+    ],
   },
   {
     code: "TR-04",
@@ -65,6 +83,12 @@ export const trainingPrograms: TrainingProgram[] = [
       "Equipment life extension strategies",
     ],
     audience: ["Workshop managers", "Maintenance teams", "Service technicians"],
+    outcomes: [
+      "Perform equipment inspection and lubrication best practices",
+      "Verify safety devices and carry out electrical visual checks",
+      "Identify mechanical wear and document maintenance",
+      "Apply strategies that extend equipment life",
+    ],
   },
   {
     code: "TR-05",
@@ -75,6 +99,12 @@ export const trainingPrograms: TrainingProgram[] = [
       "Safe handling procedures",
       "Preventive maintenance",
       "Troubleshooting basics",
+    ],
+    audience: ["Industrial cleaning operators", "Facility maintenance teams", "Workshop technicians"],
+    outcomes: [
+      "Operate industrial vacuums and high-pressure cleaning equipment safely",
+      "Apply safe handling procedures and preventive maintenance",
+      "Carry out basic troubleshooting on cleaning equipment",
     ],
   },
   {
@@ -87,6 +117,12 @@ export const trainingPrograms: TrainingProgram[] = [
       "EV battery handling equipment",
       "Safe working practices",
       "Workshop risk assessment",
+    ],
+    audience: ["EV technicians", "Workshop supervisors", "Service managers", "Safety officers"],
+    outcomes: [
+      "Apply EV workshop safety and high-voltage awareness",
+      "Use insulated tools and EV battery handling equipment correctly",
+      "Follow safe working practices and conduct workshop risk assessment",
     ],
   },
 ];

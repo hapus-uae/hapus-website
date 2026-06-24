@@ -4,9 +4,9 @@ import Link from "next/link";
 import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-import { CTABand } from "@/components/ui/CTABand";
 import { categories, categoryBySlug } from "@/data/categories";
 import { brandBySlug } from "@/data/brands";
+import { BrandLogo } from "@/components/cards/BrandLogo";
 
 // Pre-render every category at build time (static).
 export function generateStaticParams() {
@@ -79,15 +79,16 @@ export default async function CategoryPage({
 
           {brandTags.length > 0 ? (
             <Reveal delay={200}>
-              <div className="mt-10 flex flex-wrap items-center gap-2">
-                <span className="label mr-2">Brands here</span>
+              <div className="mt-10 flex flex-wrap items-center gap-3">
+                <span className="label mr-1">Brands here</span>
                 {brandTags.map((b) => (
                   <Link
                     key={b.slug}
                     href={`/brands#${b.slug}`}
-                    className="border border-line px-3 py-1.5 font-mono text-[0.6rem] uppercase tracking-[0.14em] text-mute transition-colors hover:border-bone/60 hover:text-bone"
+                    title={b.name}
+                    className="group flex h-12 w-28 items-center justify-center rounded-md bg-white px-3 [&_img]:max-h-7! [&_span]:text-lg!"
                   >
-                    {b.name}
+                    <BrandLogo brand={b} />
                   </Link>
                 ))}
               </div>
@@ -128,14 +129,6 @@ export default async function CategoryPage({
           </div>
         </Container>
       </section>
-
-      <CTABand
-        eyebrow="Request a quote"
-        title={`Enquire about ${category.name.toLowerCase()}.`}
-        body="We will confirm the right configuration for your bay, the lead time and the installed price."
-        href={`/contact?category=${category.slug}`}
-        cta={`Enquire about these`}
-      />
     </>
   );
 }

@@ -53,12 +53,12 @@ const assurances: { icon: Icon; title: string; body: string }[] = [
   {
     icon: SealCheck,
     title: "Genuine products",
-    body: "Original equipment from internationally recognised, authorised brands.",
+    body: "Original equipment sourced through authorised manufacturers and distribution channels.",
   },
   {
     icon: Headset,
     title: "Expert guidance",
-    body: "Our specialists help you specify the right solution for your operation.",
+    body: "Our specialists help identify, specify, and implement the most suitable solution for your operational requirements.",
   },
   {
     icon: Lifebuoy,
@@ -95,8 +95,8 @@ export default function ProductsPage() {
     <>
       <PageHero
         eyebrow="Solutions"
-        title="A complete ecosystem, one partner."
-        lead={`${categories.length} solution areas across every corner of the automotive and industrial floor. Choose an area to see the full range grouped by type.`}
+        title="Complete automotive & industrial solutions. One trusted partner."
+        lead={`${categories.length} solution areas across every corner of the automotive and industrial floor — supporting automotive workshops, fleet operators, industrial facilities, manufacturing environments, and technical training centres across the UAE.`}
       />
 
       {/* Assurances */}
@@ -163,7 +163,28 @@ export default function ProductsPage() {
                           </li>
                         ))}
                       </ul>
-                      <span className="mt-6 inline-flex items-center gap-2 font-mono text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-accent">
+                      {category.brands?.length ? (
+                        <div className="mt-5 border-t border-line pt-4">
+                          <span className="font-mono text-[0.6rem] uppercase tracking-[0.14em] text-mute">
+                            Featured brands
+                          </span>
+                          <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-3">
+                            {category.brands.map((slug) => {
+                              const b = brands.find((x) => x.slug === slug);
+                              return b ? (
+                                <span
+                                  key={slug}
+                                  title={b.name}
+                                  className="flex h-6 items-center [&_img]:max-h-6! [&_span]:text-base!"
+                                >
+                                  <BrandLogo brand={b} />
+                                </span>
+                              ) : null;
+                            })}
+                          </div>
+                        </div>
+                      ) : null}
+                      <span className="mt-auto pt-6 inline-flex items-center gap-2 font-mono text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-accent">
                         View products
                         <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
                       </span>
@@ -220,7 +241,7 @@ export default function ProductsPage() {
                 withArrow
                 className="mt-8"
               >
-                Request a quote
+                Request consultation
               </ButtonLink>
             </div>
 

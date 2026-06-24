@@ -12,7 +12,7 @@ import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { serviceOfferings, serviceCommitments, successStories } from "@/data/services";
+import { serviceOfferings, serviceCommitments, successStories, maintenanceProgramme } from "@/data/services";
 import { locations } from "@/data/company";
 
 type IconType = typeof Gear;
@@ -31,6 +31,15 @@ const storyImages = [
   "/assets/categories/workshop-infrastructure.jpg",
   "/assets/categories/compressed-air.jpg",
   "/assets/categories/automotive-refinishing.jpg",
+];
+
+// Image per AMC component (Unsplash), by order.
+const amcImages = [
+  "/assets/service/amc/1.jpg", // scheduled inspections
+  "/assets/service/amc/2.jpg", // preventive maintenance
+  "/assets/service/amc/3.jpg", // performance reporting
+  "/assets/service/amc/4.jpg", // emergency support coordination
+  "/assets/service/amc/5.jpg", // periodic performance reviews
 ];
 
 // A fitting (reused) image for each "What we do" offering, by order.
@@ -55,7 +64,7 @@ export default function ServicePage() {
       <PageHero
         eyebrow="Service & support"
         title="Supplied by us, supported by us."
-        lead="Our value is not in the box it's in the expertise around it. We help you specify, install and support the right solution for your operation."
+        lead="Our value is not in the box. It is in the expertise around it. We help customers specify, install, commission, maintain, and support the right solution for their operation."
         aside={
           <dl className="grid grid-cols-1 gap-px border border-line bg-line sm:grid-cols-3">
             {serviceCommitments.map((c) => (
@@ -168,6 +177,51 @@ export default function ServicePage() {
               </Reveal>
             ))}
           </ul>
+        </Container>
+      </section>
+
+      {/* Annual Maintenance Programmes (AMC) */}
+      <section className="border-b border-line bg-surface">
+        <Container className="py-20 lg:py-28">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+            {/* Intro cell — fills the first grid slot so the 5 cards complete two rows of three */}
+            <div className="flex flex-col justify-center sm:col-span-2 lg:col-span-1">
+              <span className="eyebrow">Annual maintenance programmes</span>
+              <h2 className="mt-5 font-display text-3xl font-semibold leading-tight tracking-tight text-balance text-bone lg:text-4xl">
+                Maintenance, managed for the year ahead.
+              </h2>
+              <p className="mt-5 max-w-[44ch] text-base leading-relaxed text-mute">
+                {maintenanceProgramme.intro}
+              </p>
+            </div>
+
+            {maintenanceProgramme.components.map((c, i) => (
+              <Reveal
+                key={c.title}
+                delay={(i % 3) * 70}
+                className="group flex flex-col overflow-hidden border border-line bg-surface"
+              >
+                <div className="relative aspect-video overflow-hidden">
+                  <Image
+                    src={amcImages[i] ?? ""}
+                    alt={c.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 ease-out-expo group-hover:scale-[1.04]"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-5 lg:p-6">
+                  <span className="font-mono text-[0.6rem] text-mute-2">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-2 font-display text-lg font-semibold leading-snug tracking-tight text-bone">
+                    {c.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-mute">{c.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </Container>
       </section>
 

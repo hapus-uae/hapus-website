@@ -227,7 +227,7 @@ export function Header() {
 
               <div className="mt-10 flex flex-col gap-3">
                 <ButtonLink href="/contact" variant="onPaper" size="lg" withArrow>
-                  Request a quote
+                  Request consultation
                 </ButtonLink>
                 <a
                   href={`tel:${company.phoneHref}`}

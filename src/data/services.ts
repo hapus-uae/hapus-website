@@ -6,7 +6,7 @@ export const serviceOfferings: ServiceOffering[] = [
   {
     title: "Technical consultation & specification",
     description:
-      "We start by understanding your operation, then specify the right equipment and layout for it solutions that fit the job rather than a catalogue line.",
+      "We start by understanding your operation, then specify the right equipment, layout, and solution — built for the job rather than selected from a catalogue line.",
     icon: "Headset",
   },
   {
@@ -24,7 +24,7 @@ export const serviceOfferings: ServiceOffering[] = [
   {
     title: "Genuine spare parts & consumables",
     description:
-      "Parts and consumables for the brands we represent kept moving so equipment stays productive and downtime stays short.",
+      "We supply parts and consumables for the brands we represent, helping equipment stay productive and downtime stay short.",
     icon: "Gear",
   },
   {
@@ -36,10 +36,39 @@ export const serviceOfferings: ServiceOffering[] = [
   {
     title: "Operator support",
     description:
-      "Product expertise and operator guidance from people who know the equipment support that extends well beyond the point of sale.",
+      "Product expertise and operator guidance from people who understand the equipment, with support that extends beyond the point of sale.",
     icon: "Truck",
   },
 ];
+
+// Annual Maintenance Contract (AMC) — structured, ongoing maintenance that keeps
+// customer equipment performing across its working life.
+export const maintenanceProgramme = {
+  intro:
+    "Keep equipment performing with a structured Annual Maintenance Contract. Our AMC programmes protect uptime, extend equipment life, and make maintenance costs predictable across the year.",
+  components: [
+    {
+      title: "Scheduled inspections",
+      body: "Planned visits at agreed intervals that keep equipment operating within specification.",
+    },
+    {
+      title: "Preventive maintenance",
+      body: "Routine servicing that addresses wear before it becomes downtime.",
+    },
+    {
+      title: "Performance reporting",
+      body: "Clear reports on equipment condition, work carried out, and recommended actions.",
+    },
+    {
+      title: "Emergency support coordination",
+      body: "Priority response and parts coordination when unplanned issues arise.",
+    },
+    {
+      title: "Periodic performance reviews",
+      body: "Regular reviews to optimise reliability, efficiency, and lifecycle planning.",
+    },
+  ],
+};
 
 export const serviceCommitments = [
   { value: "360°", unit: "", label: "Specify · supply · install · support" },

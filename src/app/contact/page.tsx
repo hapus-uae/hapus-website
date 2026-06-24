@@ -32,8 +32,8 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Let's build better business together."
-        lead="Whether it's automotive solutions, industrial equipment, compressed air, professional tools or a strategic partnership our team is ready to help. Every project begins with a conversation."
+        title="Let's build better businesses together."
+        lead="Whether you require automotive solutions, industrial equipment, compressed air systems, professional tools, or strategic technical support, our team is ready to assist. Every successful project begins with a conversation."
         image="/assets/hero/contact.jpg"
         imageClassName="object-top"
       />
@@ -91,6 +91,22 @@ export default function ContactPage() {
                   ))}
                 </div>
               </div>
+
+              {/* Existing customer support routing */}
+              <div className="mt-8 border border-line bg-panel/30 p-6">
+                <span className="eyebrow">Existing customer?</span>
+                <p className="mt-3 text-sm leading-relaxed text-mute">
+                  For service support, spare parts enquiries, AMC requests, or
+                  technical assistance, contact our support team directly at{" "}
+                  <a
+                    href={`mailto:${company.serviceEmail}`}
+                    className="text-bone underline-offset-4 transition-colors hover:underline"
+                  >
+                    {company.serviceEmail}
+                  </a>
+                  .
+                </p>
+              </div>
             </div>
 
             {/* Form */}
@@ -108,7 +124,11 @@ export default function ContactPage() {
       {/* Branches */}
       <section className="bg-surface">
         <Container className="py-20 lg:py-28">
-          <SectionHeading eyebrow="Branches" title="Come and see the equipment." />
+          <SectionHeading
+            eyebrow="Branches"
+            title="Come and see the equipment."
+            description="Supporting customers across the UAE through our Abu Dhabi headquarters and Dubai operations."
+          />
           <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-2">
             {locations.map((loc, i) => (
               <Reveal key={loc.name} delay={i * 80}>

@@ -40,7 +40,7 @@ export function IndustriesWeServe() {
         <SectionHeading
           eyebrow="Industries we serve"
           title="Built for the operations that keep the UAE moving."
-          description="From automotive workshops to industrial plants, fleets and training floors equipment and support specified for each."
+          description="From automotive workshops and industrial plants to fleet operations and training facilities, HAPUS provides equipment and support tailored to each environment."
         />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

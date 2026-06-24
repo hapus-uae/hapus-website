@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Check, Certificate } from "@phosphor-icons/react/dist/ssr";
+import { Check, Certificate, ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
@@ -33,7 +33,7 @@ export default function TrainingPage() {
       <PageHero
         eyebrow="Training & Technical Development"
         title="Empowering people. Improving performance."
-        lead="The effectiveness of any equipment depends not only on the technology itself, but on the knowledge and competence of the people operating and maintaining it. Our hands-on training helps your teams work safer, smarter and more efficiently reducing operational risk and unplanned downtime."
+        lead="The effectiveness of any equipment depends not only on the technology itself, but on the knowledge and competence of the people operating and maintaining it. Our hands-on training helps your teams work safer, smarter, and more efficiently — reducing operational risk and unplanned downtime."
         image="/assets/industries/training.jpg"
       />
 
@@ -47,10 +47,10 @@ export default function TrainingPage() {
                 delay={(i % 2) * 70}
                 className="border-b border-line py-10 lg:py-12"
               >
-                <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-10">
-                  {/* Image — alternates side per row */}
+                <div className="grid gap-8 lg:grid-cols-12 lg:items-stretch lg:gap-10">
+                  {/* Image — alternates side per row; matches the content height on desktop */}
                   <div
-                    className={`relative aspect-4/3 overflow-hidden border border-line lg:col-span-4 ${
+                    className={`relative aspect-4/3 overflow-hidden border border-line lg:col-span-4 lg:aspect-auto lg:h-full ${
                       i % 2 === 1 ? "lg:order-2 lg:col-start-9" : ""
                     }`}
                   >
@@ -72,10 +72,23 @@ export default function TrainingPage() {
                       {program.title}
                     </h2>
                     {program.audience ? (
-                      <p className="mt-4 text-sm leading-relaxed text-mute">
-                        <span className="label mr-2">Audience</span>
-                        {program.audience.join(" · ")}
-                      </p>
+                      <>
+                        <p className="label mb-3 mt-6">Audience</p>
+                        <ul className="grid gap-x-8 gap-y-2.5 sm:grid-cols-2">
+                          {program.audience.map((a) => (
+                            <li
+                              key={a}
+                              className="flex gap-3 text-sm leading-relaxed text-mute"
+                            >
+                              <span
+                                className="mt-2 size-1 shrink-0 rounded-full bg-accent"
+                                aria-hidden
+                              />
+                              {a}
+                            </li>
+                          ))}
+                        </ul>
+                      </>
                     ) : null}
                     <p className="label mb-3 mt-6">Coverage</p>
                     <ul className="grid gap-x-8 gap-y-2.5 sm:grid-cols-2">
@@ -92,6 +105,25 @@ export default function TrainingPage() {
                         </li>
                       ))}
                     </ul>
+                    {program.outcomes ? (
+                      <div className="mt-6 border-t border-line pt-5">
+                        <p className="label mb-3">Learning outcomes</p>
+                        <ul className="space-y-2">
+                          {program.outcomes.map((o) => (
+                            <li
+                              key={o}
+                              className="flex gap-3 text-sm leading-relaxed text-mute"
+                            >
+                              <ArrowRight
+                                weight="bold"
+                                className="mt-0.5 size-3.5 shrink-0 text-accent"
+                              />
+                              {o}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               </Reveal>
@@ -104,8 +136,8 @@ export default function TrainingPage() {
       <section className="on-wine">
         <Container className="py-16 lg:py-24">
           <SectionHeading
-            eyebrow="Premium services"
-            title="Technical consultancy"
+            eyebrow="Advisory services"
+            title="Technical consultancy & advisory services."
             description="Advisory engagements that help you assess equipment, plan maintenance and grow capacity beyond the training room."
           />
 

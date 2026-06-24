@@ -105,9 +105,10 @@ export default function Home() {
                 delay={180}
                 className="mt-5 max-w-[50ch] text-pretty text-base leading-relaxed text-mute"
               >
-                HAPUS partners with automotive, industrial, fleet and manufacturing
-                businesses across {company.region} delivering equipment, technical
-                expertise, training and long-term operational support.
+                HAPUS partners with automotive, industrial, fleet, and
+                manufacturing businesses across {company.region}, delivering
+                equipment, technical expertise, training, and long-term
+                operational support.
               </Reveal>
 
               <Reveal delay={260} className="mt-9 flex flex-wrap gap-3">
@@ -125,7 +126,7 @@ export default function Home() {
       {/* ---------- Trusted by ---------- */}
       <section className="border-b border-line bg-surface">
         <Container className="py-7 lg:py-9">
-          <div className="flex flex-col items-center gap-y-10 lg:flex-row lg:gap-x-12">
+          <div className="flex flex-col items-center gap-y-8 lg:flex-row lg:gap-x-12">
             <span className="eyebrow shrink-0 text-center lg:max-w-40 lg:text-left">
               Trusted by industry leaders
             </span>
@@ -144,6 +145,11 @@ export default function Home() {
               ))}
             </Marquee>
           </div>
+
+          {/* Supporting line — full width, under the logos */}
+          <p className="mt-7 text-center text-sm leading-snug text-mute">
+            Supporting automotive, fleet, and industrial operations across the UAE.
+          </p>
         </Container>
       </section>
 

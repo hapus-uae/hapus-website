@@ -26,6 +26,15 @@ const coreValues = [
   ["Commitment to performance", "Reliability, efficiency, and operational excellence are principles that guide every aspect of our business. We hold ourselves to the same standards we encourage our customers to achieve."],
 ];
 
+// Compact authority strip shown directly under the About hero.
+const aboutFacts = [
+  { value: "2020", label: "Established in Abu Dhabi" },
+  { value: "Abu Dhabi", label: "Head office" },
+  { value: "Dubai", label: "Branch office" },
+  { value: "UAE-wide", label: "Support coverage" },
+  { value: "Automotive & Industrial", label: "Solutions expertise" },
+];
+
 export const metadata: Metadata = {
   title: "About",
   description:
@@ -41,6 +50,24 @@ export default function AboutPage() {
         lead={`${company.legalName} was established with a clear purpose: to help businesses across the UAE operate at higher standards by providing access to world-class technologies, equipment, and technical solutions.`}
         image="/assets/hero/hero.jpg"
       />
+
+      {/* Authority strip */}
+      <section className="on-wine border-b border-line bg-ink bg-none">
+        <Container className="py-0">
+          <dl className="grid grid-cols-2 divide-x divide-y divide-line border-x border-line sm:grid-cols-3 lg:grid-cols-5 lg:divide-y-0">
+            {aboutFacts.map((fact) => (
+              <div key={fact.label} className="px-5 py-6 lg:px-6 lg:py-8">
+                <dt className="font-display text-xl font-semibold leading-tight tracking-tight text-bone lg:text-2xl">
+                  {fact.value}
+                </dt>
+                <dd className="mt-2 font-mono text-[0.6rem] uppercase tracking-[0.16em] text-mute-2">
+                  {fact.label}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </Container>
+      </section>
 
       {/* Story */}
       <section className="border-b border-line bg-surface">
@@ -207,6 +234,10 @@ export default function AboutPage() {
                   strategic partner in the success of every organization we serve.
                 </p>
               </div>
+              <p className="mt-6 border-t border-line pt-5 font-display text-base font-semibold leading-snug tracking-tight text-bone">
+                Improving productivity, reducing downtime, and creating measurable
+                operational value.
+              </p>
             </Reveal>
           </div>
         </Container>
